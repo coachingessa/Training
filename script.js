@@ -14,27 +14,27 @@
   resize();
   window.addEventListener('resize', resize);
 
-  const COUNT = window.innerWidth < 768 ? 80 : 150;
+  const COUNT = window.innerWidth < 768 ? 120 : 180;
   for (let i = 0; i < COUNT; i++) {
     // Randomize particle types: 0 = small distant snow, 1 = medium snow, 2 = glowing ice shards
     const type = Math.random();
     let size, speed, blur, alpha;
     
-    if (type < 0.6) { // Background snow
+    if (type < 0.5) { // Background snow
       size = Math.random() * 1.5 + 0.5;
       speed = Math.random() * 0.5 + 0.2;
       blur = 0;
-      alpha = Math.random() * 0.3 + 0.1;
-    } else if (type < 0.9) { // Midground snow
+      alpha = Math.random() * 0.4 + 0.2;
+    } else if (type < 0.8) { // Midground snow
       size = Math.random() * 2.5 + 1.5;
       speed = Math.random() * 1 + 0.5;
       blur = Math.random() * 2;
-      alpha = Math.random() * 0.5 + 0.3;
-    } else { // Foreground glowing ice shards
+      alpha = Math.random() * 0.6 + 0.4;
+    } else { // Foreground glowing ice shards (increased chance)
       size = Math.random() * 4 + 2;
       speed = Math.random() * 2 + 1;
-      blur = Math.random() * 4 + 2;
-      alpha = Math.random() * 0.8 + 0.4;
+      blur = Math.random() * 5 + 3;
+      alpha = Math.random() * 0.8 + 0.5;
     }
 
     particles.push({
