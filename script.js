@@ -34,7 +34,9 @@
       if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(77,155,255,${p.alpha})`;
+      // Icy white-blue particles
+      const hue = 195 + Math.random() * 30;
+      ctx.fillStyle = `hsla(${hue},80%,80%,${p.alpha})`;
       ctx.fill();
     });
     particles.forEach((a, i) => {
@@ -43,7 +45,8 @@
         if (d < 100) {
           ctx.beginPath();
           ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(0,85,255,${0.1 * (1 - d / 100)})`;
+          // Icy blue connecting lines
+          ctx.strokeStyle = `rgba(100,190,255,${0.12 * (1 - d / 100)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }

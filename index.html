@@ -40,6 +40,36 @@
       <div class="hero-ring ring-mid"></div>
       <div class="hero-ring ring-inner"></div>
       <div class="hero-glow-spot"></div>
+      <!-- Ice crack overlays -->
+      <svg class="ice-crack ice-crack-1" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M100 0 L80 60 L110 90 L60 180 L90 200 L50 320 L80 380 L100 400" stroke="rgba(160,220,255,0.12)" stroke-width="1.5" fill="none"/>
+        <path d="M80 60 L40 80 L20 120" stroke="rgba(160,220,255,0.08)" stroke-width="1" fill="none"/>
+        <path d="M110 90 L150 110 L180 95" stroke="rgba(160,220,255,0.08)" stroke-width="1" fill="none"/>
+        <path d="M60 180 L20 200 L0 250" stroke="rgba(160,220,255,0.06)" stroke-width="0.8" fill="none"/>
+        <path d="M90 200 L140 215 L170 260" stroke="rgba(160,220,255,0.07)" stroke-width="0.8" fill="none"/>
+      </svg>
+      <svg class="ice-crack ice-crack-2" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M50 0 L90 80 L60 130 L100 220 L70 300 L110 400" stroke="rgba(100,180,255,0.1)" stroke-width="1.5" fill="none"/>
+        <path d="M90 80 L140 60 L180 80" stroke="rgba(100,180,255,0.07)" stroke-width="1" fill="none"/>
+        <path d="M60 130 L20 150 L0 190" stroke="rgba(100,180,255,0.07)" stroke-width="1" fill="none"/>
+      </svg>
+      <!-- Hex crystal decorations -->
+      <svg class="hex-crystal hex-1" viewBox="0 0 60 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="30,2 58,17 58,53 30,68 2,53 2,17" fill="none" stroke="rgba(160,220,255,0.18)" stroke-width="1"/>
+        <polygon points="30,12 48,22 48,48 30,58 12,48 12,22" fill="none" stroke="rgba(160,220,255,0.1)" stroke-width="0.8"/>
+        <line x1="30" y1="2" x2="30" y2="68" stroke="rgba(160,220,255,0.06)" stroke-width="0.6"/>
+        <line x1="2" y1="17" x2="58" y2="53" stroke="rgba(160,220,255,0.06)" stroke-width="0.6"/>
+        <line x1="58" y1="17" x2="2" y2="53" stroke="rgba(160,220,255,0.06)" stroke-width="0.6"/>
+      </svg>
+      <svg class="hex-crystal hex-2" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="20,2 38,12 38,34 20,44 2,34 2,12" fill="none" stroke="rgba(100,200,255,0.15)" stroke-width="1"/>
+        <line x1="20" y1="2" x2="20" y2="44" stroke="rgba(100,200,255,0.07)" stroke-width="0.6"/>
+        <line x1="2" y1="12" x2="38" y2="34" stroke="rgba(100,200,255,0.07)" stroke-width="0.6"/>
+        <line x1="38" y1="12" x2="2" y2="34" stroke="rgba(100,200,255,0.07)" stroke-width="0.6"/>
+      </svg>
+      <svg class="hex-crystal hex-3" viewBox="0 0 30 35" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="15,2 28,9 28,26 15,33 2,26 2,9" fill="none" stroke="rgba(180,230,255,0.12)" stroke-width="1"/>
+      </svg>
     </div>
 
     <div class="hero-layout">
@@ -49,10 +79,17 @@
           <span class="label-line"></span>
           <span data-ar="ONLINE COACH" data-en="ONLINE COACH">ONLINE COACH</span>
         </p>
-        <h1 class="hero-name">
-          <span class="name-line silver-text">AHMED</span>
-          <span class="name-line silver-text">ESSA</span>
-        </h1>
+
+        <!-- SVG Drawn text — each letter stroked then filled -->
+        <div class="hero-name-wrap" aria-label="Ahmed Essa">
+          <svg class="hero-svg-title" viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <text class="svg-stroke-text" x="4" y="120" font-family="Montserrat, sans-serif" font-weight="900" font-size="118" letter-spacing="-4">AHMED</text>
+          </svg>
+          <svg class="hero-svg-title hero-svg-title--delay" viewBox="0 0 380 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <text class="svg-stroke-text svg-fill-blue" x="4" y="100" font-family="Montserrat, sans-serif" font-weight="900" font-size="118" letter-spacing="-4">ESSA</text>
+          </svg>
+        </div>
+
         <p class="hero-sub" data-ar="مش مجرد مدرب." data-en="Not just a coach.">مش مجرد مدرب.</p>
         <p class="hero-tagline">
           <span class="blue-text" data-ar="أنا شريك رحلتك نحو أفضل نسخة منك." data-en="I'm your partner to your best self.">أنا شريك رحلتك نحو أفضل نسخة منك.</span>
@@ -76,7 +113,9 @@
         <div class="coach-frame">
           <div class="ae-watermark">AE</div>
           <div class="coach-glow"></div>
-          <img src="images/coach1.jpg" alt="Ahmed Essa" class="coach-img">
+          <img src="images/coach1.jpg" alt="Ahmed Essa" class="coach-img"
+               fetchpriority="high" loading="eager" decoding="async"
+               width="500" height="700">
           <div class="coach-spotlight"></div>
         </div>
       </div>

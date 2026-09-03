@@ -692,3 +692,177 @@ body.lang-en .compare-btn { flex-direction: row; }
 
 /* ============ 3D TILT CARD ============ */
 .tilt-element { will-change: transform; }
+
+/* ============================================================
+   ICY / FROST THEME — Premium Visual Touches
+   ============================================================ */
+
+/* ---- SVG DRAWN TEXT ANIMATION ---- */
+.hero-name-wrap {
+  display: flex; flex-direction: column; gap: 0;
+  margin-bottom: 16px; line-height: 1;
+  animation: slideUp 0.8s ease forwards 0.1s; opacity: 0;
+}
+.hero-svg-title {
+  width: 100%; height: auto;
+  display: block; overflow: visible;
+}
+
+/* The stroke-draw animation */
+.svg-stroke-text {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 1.5;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  paint-order: stroke fill;
+  /* Step 1: draw the outline */
+  animation:
+    drawOutline 1.2s ease forwards 0.3s,
+    fillWhite   0.6s ease forwards 1.4s;
+}
+/* ESSA in icy blue */
+.svg-stroke-text.svg-fill-blue {
+  stroke: var(--blue-l);
+  animation:
+    drawOutline 1.2s ease forwards 0.7s,
+    fillBlue    0.6s ease forwards 1.8s;
+}
+
+@keyframes drawOutline {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes fillWhite {
+  from { fill: transparent; }
+  to   { fill: #E8F4FF; stroke-width: 0.5; stroke: rgba(255,255,255,0.3); }
+}
+@keyframes fillBlue {
+  from { fill: transparent; }
+  to   { fill: var(--blue-l); stroke-width: 0.5; stroke: rgba(77,155,255,0.3); filter: drop-shadow(0 0 12px rgba(0,85,255,0.55)); }
+}
+
+/* ---- ICE CRACK OVERLAYS ---- */
+.ice-crack {
+  position: absolute; pointer-events: none; z-index: 1;
+  opacity: 0; animation: iceFadeIn 2s ease forwards;
+}
+.ice-crack-1 { top: 0; left: 5%; height: 100%; width: 150px; animation-delay: 0.8s; }
+.ice-crack-2 { top: 0; right: 8%; height: 100%; width: 150px; animation-delay: 1.2s; transform: scaleX(-1); }
+@keyframes iceFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---- HEX CRYSTAL DECORATIONS ---- */
+.hex-crystal {
+  position: absolute; pointer-events: none; z-index: 1;
+  opacity: 0; animation: hexAppear 1.5s ease forwards;
+}
+.hex-1 { width: 72px; top: 18%; left: 8%; animation-delay: 1s;   animation-name: hexAppearRotate; }
+.hex-2 { width: 48px; top: 65%; right: 12%; animation-delay: 1.3s; animation-name: hexAppearRotate; }
+.hex-3 { width: 36px; top: 35%; right: 6%;  animation-delay: 1.6s; animation-name: hexAppearRotate; }
+@media (max-width: 767px) { .hex-crystal { display: none; } }
+
+@keyframes hexAppear { from { opacity:0; transform: scale(0.5); } to { opacity:1; transform: scale(1); } }
+@keyframes hexAppearRotate {
+  from { opacity:0; transform: scale(0.5) rotate(-30deg); }
+  to   { opacity:1; transform: scale(1)   rotate(0deg); }
+}
+
+/* Subtle floating animation on hex crystals */
+.hex-1 { animation: hexFloat1 8s ease-in-out infinite 1s; }
+.hex-2 { animation: hexFloat2 10s ease-in-out infinite 1.3s; }
+.hex-3 { animation: hexFloat1 7s ease-in-out infinite 1.6s; }
+@keyframes hexFloat1 {
+  0%,100% { transform: translateY(0) rotate(0deg); opacity: 0.85; }
+  50%      { transform: translateY(-10px) rotate(6deg); opacity: 1; }
+}
+@keyframes hexFloat2 {
+  0%,100% { transform: translateY(0) rotate(0deg); opacity: 0.85; }
+  50%      { transform: translateY(8px) rotate(-4deg); opacity: 1; }
+}
+
+/* ---- SECTION HEADINGS DRAW REVEAL ---- */
+/* Each section heading gets a sliding clip reveal */
+.section-heading {
+  position: relative; overflow: visible;
+}
+.reveal.visible .section-heading {
+  animation: headingReveal 0.9s var(--ease, ease) forwards;
+}
+@keyframes headingReveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- FROST GLASS ENHANCEMENT ---- */
+.glass {
+  background: rgba(4, 12, 28, 0.72);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  border: 1px solid rgba(100, 180, 255, 0.14);
+}
+.glass:hover {
+  border-color: rgba(100, 180, 255, 0.35);
+  box-shadow: 0 0 24px rgba(0,85,255,0.12), inset 0 1px 0 rgba(200,230,255,0.06);
+}
+
+/* ---- ICY BLUE RING ENHANCEMENT ---- */
+.hero-ring {
+  border-color: rgba(100,200,255,0.1);
+  box-shadow: 0 0 60px rgba(0,150,255,0.06) inset, 0 0 60px rgba(0,150,255,0.04);
+}
+
+/* ---- COLD PARTICLE EFFECT (JS override hint) ---- */
+:root { --particle-color: rgba(160, 220, 255, 1); }
+
+/* ---- FROST LINE on hero ---- */
+.hero::after {
+  background: linear-gradient(90deg, transparent, rgba(160,220,255,0.6), rgba(255,255,255,0.8), rgba(160,220,255,0.6), transparent);
+  opacity: 0.12;
+}
+
+/* ---- COLD GLOW on buttons ---- */
+.btn-primary {
+  background: linear-gradient(135deg, #0055FF 0%, #0088FF 100%);
+  box-shadow: 0 0 20px rgba(0,100,255,0.45), 0 0 50px rgba(0,100,255,0.15);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0044DD 0%, #0077EE 100%);
+  box-shadow: 0 0 30px rgba(0,100,255,0.65), 0 0 80px rgba(0,100,255,0.2);
+}
+
+/* ---- ICED stat cards ---- */
+.stat-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 20px rgba(0,120,255,0.1), inset 0 1px 0 rgba(200,230,255,0.08);
+}
+.stat-icon-wrap svg {
+  filter: drop-shadow(0 0 6px rgba(100,180,255,0.6));
+}
+
+/* ---- ICY pricing popular card ---- */
+.pkg-popular {
+  border-color: rgba(0,150,255,0.45);
+  box-shadow: 0 0 40px rgba(0,120,255,0.14), inset 0 1px 0 rgba(200,235,255,0.07);
+}
+
+/* ---- IMAGE LOADING SKELETON ---- */
+.coach-img {
+  background: linear-gradient(90deg, #050C18 25%, #0A1628 50%, #050C18 75%);
+  background-size: 200% 100%;
+  animation: imgSkeleton 1.5s ease infinite;
+}
+.coach-img[complete], .coach-img.loaded {
+  animation: none;
+  background: none;
+}
+@keyframes imgSkeleton {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ---- FOOTER ICY DIVIDER ---- */
+.footer { border-top-color: rgba(100,180,255,0.12); }
+
+/* ---- MOBILE ICY ADJUSTMENTS ---- */
+@media (max-width: 640px) {
+  .ice-crack { opacity: 0.6; }
+  .hero-svg-title { display: block; }
+}
