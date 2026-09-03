@@ -14,19 +14,19 @@
   resize();
   window.addEventListener('resize', resize);
 
-  const COUNT = 60;
+  const COUNT = window.innerWidth < 768 ? 30 : 55;
   for (let i = 0; i < COUNT; i++) {
     particles.push({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      r: Math.random() * 1.5 + 0.4,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      alpha: Math.random() * 0.6 + 0.2
+      r: Math.random() * 1.4 + 0.3,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25,
+      alpha: Math.random() * 0.5 + 0.15
     });
   }
 
-  function drawParticles() {
+  function draw() {
     ctx.clearRect(0, 0, W, H);
     particles.forEach(p => {
       p.x += p.vx; p.y += p.vy;
@@ -37,185 +37,143 @@
       ctx.fillStyle = `rgba(77,155,255,${p.alpha})`;
       ctx.fill();
     });
-    // Draw connecting lines
     particles.forEach((a, i) => {
       particles.slice(i + 1).forEach(b => {
-        const dist = Math.hypot(a.x - b.x, a.y - b.y);
-        if (dist < 120) {
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 100) {
           ctx.beginPath();
           ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(0,102,255,${0.12 * (1 - dist / 120)})`;
+          ctx.strokeStyle = `rgba(0,85,255,${0.1 * (1 - d / 100)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
       });
     });
-    requestAnimationFrame(drawParticles);
+    requestAnimationFrame(draw);
   }
-  drawParticles();
+  draw();
 })();
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- SECTION REVEALS ---
-  const sections = document.querySelectorAll('section, header');
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.08 });
-  sections.forEach(s => { s.classList.add('reveal-section'); sectionObserver.observe(s); });
+  // ---- NAVBAR SCROLL ----
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+  }
 
-  // --- PAGINATION DOTS ---
-  const dots = document.querySelectorAll('.dot');
-  const sectionsArr = Array.from(sections);
-  const dotObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const idx = sectionsArr.indexOf(entry.target);
-        if (idx >= 0 && idx < dots.length) {
-          dots.forEach(d => d.classList.remove('active'));
-          dots[Math.min(idx, dots.length - 1)].classList.add('active');
+  // ---- SECTION REVEALS ----
+  const revealEls = document.querySelectorAll('.reveal, .reveal-child');
+  if ('IntersectionObserver' in window) {
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // stagger children
+          const children = entry.target.querySelectorAll('.reveal-child');
+          children.forEach((c, i) => {
+            setTimeout(() => c.classList.add('visible'), i * 100);
+          });
+          entry.target.classList.add('visible');
+          ro.unobserve(entry.target);
         }
-      }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => ro.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
+
+  // ---- LANGUAGE TOGGLE ----
+  const langBtn = document.getElementById('lang-toggle');
+  let lang = 'ar';
+
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      lang = lang === 'ar' ? 'en' : 'ar';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.body.className = `lang-${lang}`;
+      langBtn.textContent = lang === 'ar' ? 'EN' : 'AR';
+
+      document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
     });
-  }, { threshold: 0.5 });
-  sectionsArr.forEach(s => dotObserver.observe(s));
+  }
 
-  // --- NAVBAR SCROLL ---
-  const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
-  // --- LANGUAGE TOGGLE ---
-  const langToggle = document.getElementById('lang-toggle');
-  let currentLang = 'ar';
-
-  langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'ar' ? 'en' : 'ar';
-    document.documentElement.lang = currentLang;
-    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-    document.body.className = `lang-${currentLang}`;
-    langToggle.textContent = currentLang === 'ar' ? 'EN' : 'AR';
-
-    // Update text content based on data attributes
-    const elementsToTranslate = document.querySelectorAll('[data-ar][data-en]');
-    elementsToTranslate.forEach(el => {
-      // Check if it has an icon or child we need to keep
-      const hasIcon = el.querySelector('.icon');
-      if (hasIcon) {
-        const iconHTML = hasIcon.outerHTML;
-        el.innerHTML = iconHTML + ' ' + el.getAttribute(`data-${currentLang}`);
-      } else {
-        el.textContent = el.getAttribute(`data-${currentLang}`);
-      }
-    });
-  });
-
-  // --- NUMBER COUNTER ---
-  // Uses easeOut so numbers accelerate then slow — no layout shift
-  const counters = document.querySelectorAll('.counter');
-  let counterStarted = false;
-
+  // ---- COUNTER ANIMATION ----
   function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
 
   function animateCounter(el) {
     const target = +el.getAttribute('data-target');
-    const duration = 1800; // ms
-    const startTime = performance.now();
-    const suffix = el.parentElement.textContent.replace(/[0-9]/g,'').replace(el.textContent,'').trim();
-
-    function step(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const value = Math.round(easeOutQuart(progress) * target);
-      el.textContent = value;
+    const duration = 1800;
+    const start = performance.now();
+    (function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      el.textContent = Math.round(easeOutQuart(progress) * target);
       if (progress < 1) requestAnimationFrame(step);
       else el.textContent = target;
-    }
-    requestAnimationFrame(step);
+    })(performance.now());
   }
 
-  const counterObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !counterStarted) {
-      counterStarted = true;
-      counters.forEach(animateCounter);
-    }
-  }, { threshold: 0.4 });
+  const counters = document.querySelectorAll('.counter');
+  const statsGrid = document.querySelector('.stats-grid');
+  let counted = false;
 
-  const statsSection = document.querySelector('.stats-grid');
-  if (statsSection) counterObserver.observe(statsSection);
-
-
-  // --- 3D TILT EFFECT ---
-  const tiltElements = document.querySelectorAll('.tilt-element');
-  
-  tiltElements.forEach(el => {
-    el.addEventListener('mousemove', e => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const xTarget = ((x - rect.width / 2) / rect.width) * 15; // max 7.5 deg
-      const yTarget = ((y - rect.height / 2) / rect.height) * -15;
-      
-      el.style.transform = `perspective(1000px) rotateX(${yTarget}deg) rotateY(${xTarget}deg)`;
-    });
-    
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-      setTimeout(() => { el.style.transition = 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)'; }, 50);
-    });
-    
-    el.addEventListener('mouseenter', () => {
-      el.style.transition = 'none';
-    });
-  });
-
-  // --- BEFORE/AFTER SLIDERS ---
-  const baContainers = document.querySelectorAll('.ba-container');
-  
-  baContainers.forEach(container => {
-    const sliderLine = container.querySelector('.ba-slider-line');
-    const afterImg = container.querySelector('.ba-after');
-    let isDragging = false;
-    
-    const moveSlider = (e) => {
-      if (!isDragging) return;
-      
-      const rect = container.getBoundingClientRect();
-      let x = (e.type.includes('mouse')) ? e.pageX - rect.left : e.touches[0].clientX - rect.left;
-      
-      x = Math.max(0, Math.min(x, rect.width));
-      const percentage = (x / rect.width) * 100;
-      
-      sliderLine.style.left = `${percentage}%`;
-      
-      if (document.documentElement.dir === 'rtl') {
-         afterImg.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-      } else {
-         afterImg.style.clipPath = `inset(0 0 0 ${percentage}%)`;
+  if (statsGrid && counters.length) {
+    const co = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !counted) {
+        counted = true;
+        counters.forEach(animateCounter);
       }
-    };
-    
-    container.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      moveSlider(e);
+    }, { threshold: 0.4 });
+    co.observe(statsGrid);
+  }
+
+  // ---- 3D TILT (desktop only) ----
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.tilt-element').forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width  - 0.5) * 12;
+        const y = ((e.clientY - r.top)  / r.height - 0.5) * -12;
+        el.style.transform = `perspective(900px) rotateX(${y}deg) rotateY(${x}deg)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transition = 'transform 0.5s var(--ease, ease)';
+        el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+        setTimeout(() => { el.style.transition = ''; }, 500);
+      });
+      el.addEventListener('mouseenter', () => { el.style.transition = 'none'; });
     });
-    window.addEventListener('mouseup', () => { isDragging = false; });
-    window.addEventListener('mousemove', moveSlider);
-    
-    container.addEventListener('touchstart', (e) => {
-      isDragging = true;
-      moveSlider(e);
-    }, {passive: true});
-    window.addEventListener('touchend', () => { isDragging = false; });
-    window.addEventListener('touchmove', moveSlider, {passive: true});
+  }
+
+  // ---- BEFORE/AFTER SLIDERS ----
+  document.querySelectorAll('.ba-slider-wrap').forEach(wrap => {
+    const after   = wrap.querySelector('.ba-after');
+    const handle  = wrap.querySelector('.ba-handle');
+    let dragging  = false;
+    const isRTL   = () => document.documentElement.dir === 'rtl';
+
+    function setPos(x) {
+      const rect = wrap.getBoundingClientRect();
+      const pct  = Math.max(0, Math.min((x - rect.left) / rect.width, 1)) * 100;
+      handle.style.left = `${pct}%`;
+      if (isRTL()) {
+        after.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      } else {
+        after.style.clipPath = `inset(0 0 0 ${pct}%)`;
+      }
+    }
+
+    wrap.addEventListener('mousedown',  e => { dragging = true; setPos(e.clientX); });
+    wrap.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('mouseup',  () => { dragging = false; });
+    window.addEventListener('touchend', () => { dragging = false; });
+    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+    window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
   });
+
 });
