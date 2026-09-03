@@ -119,34 +119,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- NUMBER COUNTER ---
+  // Uses easeOut so numbers accelerate then slow — no layout shift
   const counters = document.querySelectorAll('.counter');
-  let started = false;
+  let counterStarted = false;
+
+  function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+  function animateCounter(el) {
+    const target = +el.getAttribute('data-target');
+    const duration = 1800; // ms
+    const startTime = performance.now();
+    const suffix = el.parentElement.textContent.replace(/[0-9]/g,'').replace(el.textContent,'').trim();
+
+    function step(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.round(easeOutQuart(progress) * target);
+      el.textContent = value;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
 
   const counterObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !started) {
-      started = true;
-      counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const duration = 2000;
-        const increment = target / (duration / 16);
-        let current = 0;
-
-        const updateCounter = () => {
-          current += increment;
-          if (current < target) {
-            counter.textContent = Math.ceil(current);
-            requestAnimationFrame(updateCounter);
-          } else {
-            counter.textContent = target;
-          }
-        };
-        updateCounter();
-      });
+    if (entries[0].isIntersecting && !counterStarted) {
+      counterStarted = true;
+      counters.forEach(animateCounter);
     }
-  }, { threshold: 0.5 });
-  
+  }, { threshold: 0.4 });
+
   const statsSection = document.querySelector('.stats-grid');
-  if(statsSection) counterObserver.observe(statsSection);
+  if (statsSection) counterObserver.observe(statsSection);
+
 
   // --- 3D TILT EFFECT ---
   const tiltElements = document.querySelectorAll('.tilt-element');
