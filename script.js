@@ -1,6 +1,6 @@
 'use strict';
 
-/* ====== PARTICLE CANVAS ====== */
+/* ====== EPIC ICE & SNOW CANVAS ====== */
 (function initParticles() {
   const canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
@@ -14,44 +14,74 @@
   resize();
   window.addEventListener('resize', resize);
 
-  const COUNT = window.innerWidth < 768 ? 30 : 55;
+  const COUNT = window.innerWidth < 768 ? 80 : 150;
   for (let i = 0; i < COUNT; i++) {
+    // Randomize particle types: 0 = small distant snow, 1 = medium snow, 2 = glowing ice shards
+    const type = Math.random();
+    let size, speed, blur, alpha;
+    
+    if (type < 0.6) { // Background snow
+      size = Math.random() * 1.5 + 0.5;
+      speed = Math.random() * 0.5 + 0.2;
+      blur = 0;
+      alpha = Math.random() * 0.3 + 0.1;
+    } else if (type < 0.9) { // Midground snow
+      size = Math.random() * 2.5 + 1.5;
+      speed = Math.random() * 1 + 0.5;
+      blur = Math.random() * 2;
+      alpha = Math.random() * 0.5 + 0.3;
+    } else { // Foreground glowing ice shards
+      size = Math.random() * 4 + 2;
+      speed = Math.random() * 2 + 1;
+      blur = Math.random() * 4 + 2;
+      alpha = Math.random() * 0.8 + 0.4;
+    }
+
     particles.push({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      r: Math.random() * 1.4 + 0.3,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      alpha: Math.random() * 0.5 + 0.15
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: size,
+      vx: (Math.random() - 0.5) * speed * 1.5 - (speed * 0.3), // Drifting left slightly
+      vy: speed,
+      blur: blur,
+      alpha: alpha,
+      wobble: Math.random() * Math.PI * 2, // For swaying motion
+      wobbleSpeed: (Math.random() - 0.5) * 0.05
     });
   }
 
   function draw() {
     ctx.clearRect(0, 0, W, H);
+    
     particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      // Swaying motion
+      p.wobble += p.wobbleSpeed;
+      p.x += p.vx + Math.sin(p.wobble) * 0.5;
+      p.y += p.vy;
+      
+      // Wrap around
+      if (p.x < -20) p.x = W + 20; 
+      if (p.x > W + 20) p.x = -20;
+      if (p.y > H + 20) {
+        p.y = -20;
+        p.x = Math.random() * W;
+      }
+
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      // Icy white-blue particles
-      const hue = 195 + Math.random() * 30;
-      ctx.fillStyle = `hsla(${hue},80%,80%,${p.alpha})`;
+      
+      if (p.blur > 0) {
+        ctx.shadowBlur = p.blur;
+        ctx.shadowColor = `rgba(160, 220, 255, ${p.alpha})`;
+      } else {
+        ctx.shadowBlur = 0;
+      }
+      
+      const hue = 195 + Math.random() * 15; // Icy blue/cyan
+      ctx.fillStyle = `hsla(${hue}, 90%, 90%, ${p.alpha})`;
       ctx.fill();
     });
-    particles.forEach((a, i) => {
-      particles.slice(i + 1).forEach(b => {
-        const d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d < 100) {
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-          // Icy blue connecting lines
-          ctx.strokeStyle = `rgba(100,190,255,${0.12 * (1 - d / 100)})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      });
-    });
+    
     requestAnimationFrame(draw);
   }
   draw();

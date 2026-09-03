@@ -22,16 +22,16 @@ section, header, footer { overflow: hidden; }
 
 /* ============ CSS VARIABLES ============ */
 :root {
-  --bg:        #020408;
-  --bg2:       #050C18;
-  --blue:      #0055FF;
-  --blue-l:    #4D9BFF;
-  --blue-glow: rgba(0, 85, 255, 0.35);
-  --glass:     rgba(5, 14, 30, 0.7);
-  --border:    rgba(0, 85, 255, 0.18);
-  --border-h:  rgba(0, 85, 255, 0.55);
-  --muted:     #6A7A90;
-  --silver-g:  linear-gradient(170deg, #FFF 0%, #8090A0 100%);
+  --bg:        #010307;
+  --bg2:       #030913;
+  --blue:      #0088FF;
+  --blue-l:    #4DEEEA;
+  --blue-glow: rgba(77, 238, 234, 0.4);
+  --glass:     rgba(3, 9, 19, 0.6);
+  --border:    rgba(77, 238, 234, 0.2);
+  --border-h:  rgba(77, 238, 234, 0.6);
+  --muted:     #7A8A9E;
+  --silver-g:  linear-gradient(170deg, #FFFFFF 0%, #A0D8FF 100%);
   --ease:      cubic-bezier(0.22, 1, 0.36, 1);
   --T:         0.4s var(--ease);
 }
@@ -794,44 +794,48 @@ body.lang-en .compare-btn { flex-direction: row; }
 
 /* ---- FROST GLASS ENHANCEMENT ---- */
 .glass {
-  background: rgba(4, 12, 28, 0.72);
-  backdrop-filter: blur(20px) saturate(1.6);
-  -webkit-backdrop-filter: blur(20px) saturate(1.6);
-  border: 1px solid rgba(100, 180, 255, 0.14);
+  background: rgba(1, 6, 15, 0.45);
+  backdrop-filter: blur(28px) saturate(1.8);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  border: 1px solid rgba(77, 238, 234, 0.15);
+  box-shadow: inset 0 0 20px rgba(77, 238, 234, 0.05), 0 4px 20px rgba(0,0,0,0.4);
 }
 .glass:hover {
-  border-color: rgba(100, 180, 255, 0.35);
-  box-shadow: 0 0 24px rgba(0,85,255,0.12), inset 0 1px 0 rgba(200,230,255,0.06);
+  border-color: rgba(77, 238, 234, 0.4);
+  box-shadow: 0 0 30px rgba(0, 136, 255, 0.2), inset 0 0 30px rgba(77, 238, 234, 0.1);
 }
 
 /* ---- ICY BLUE RING ENHANCEMENT ---- */
 .hero-ring {
-  border-color: rgba(100,200,255,0.1);
-  box-shadow: 0 0 60px rgba(0,150,255,0.06) inset, 0 0 60px rgba(0,150,255,0.04);
+  border-color: rgba(77, 238, 234, 0.12);
+  box-shadow: 0 0 80px rgba(0, 136, 255, 0.08) inset, 0 0 80px rgba(77, 238, 234, 0.05);
 }
 
 /* ---- COLD PARTICLE EFFECT (JS override hint) ---- */
-:root { --particle-color: rgba(160, 220, 255, 1); }
+:root { --particle-color: rgba(77, 238, 234, 1); }
 
 /* ---- FROST LINE on hero ---- */
 .hero::after {
-  background: linear-gradient(90deg, transparent, rgba(160,220,255,0.6), rgba(255,255,255,0.8), rgba(160,220,255,0.6), transparent);
-  opacity: 0.12;
+  background: linear-gradient(90deg, transparent, rgba(77,238,234,0.6), rgba(255,255,255,0.9), rgba(77,238,234,0.6), transparent);
+  opacity: 0.15;
+  box-shadow: 0 0 10px rgba(77,238,234,0.5);
 }
 
 /* ---- COLD GLOW on buttons ---- */
 .btn-primary {
-  background: linear-gradient(135deg, #0055FF 0%, #0088FF 100%);
-  box-shadow: 0 0 20px rgba(0,100,255,0.45), 0 0 50px rgba(0,100,255,0.15);
+  background: linear-gradient(135deg, #0088FF 0%, #4DEEEA 100%);
+  color: #010307; /* Dark text for contrast against bright cyan */
+  box-shadow: 0 0 25px rgba(77, 238, 234, 0.5), 0 0 60px rgba(0, 136, 255, 0.2);
 }
 .btn-primary:hover {
-  background: linear-gradient(135deg, #0044DD 0%, #0077EE 100%);
-  box-shadow: 0 0 30px rgba(0,100,255,0.65), 0 0 80px rgba(0,100,255,0.2);
+  background: linear-gradient(135deg, #0077EE 0%, #3DDDD9 100%);
+  box-shadow: 0 0 35px rgba(77, 238, 234, 0.7), 0 0 90px rgba(0, 136, 255, 0.3);
+  color: #000;
 }
 
 /* ---- ICED stat cards ---- */
 .stat-card:hover {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 20px rgba(0,120,255,0.1), inset 0 1px 0 rgba(200,230,255,0.08);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 25px rgba(0, 136, 255, 0.2), inset 0 1px 0 rgba(77, 238, 234, 0.15);
 }
 .stat-icon-wrap svg {
   filter: drop-shadow(0 0 6px rgba(100,180,255,0.6));
