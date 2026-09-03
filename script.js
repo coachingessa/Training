@@ -1,7 +1,9 @@
 'use strict';
 
-/* ====== EPIC ICE & SNOW CANVAS ====== */
-(function initParticles() {
+/* ============================================================
+   PARTICLES — Cinematic Ice & Snow
+   ============================================================ */
+(function () {
   const canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
@@ -12,121 +14,111 @@
     H = canvas.height = window.innerHeight;
   }
   resize();
-  window.addEventListener('resize', resize);
+  window.addEventListener('resize', resize, { passive: true });
 
-  const COUNT = window.innerWidth < 768 ? 160 : 300;
+  const isMobile = window.innerWidth < 768;
+  const COUNT = isMobile ? 100 : 200;
+
   for (let i = 0; i < COUNT; i++) {
-    const type = Math.random();
-    let size, speed, blur, alpha;
-    
-    if (type < 0.5) { // Background heavy snow
-      size = Math.random() * 2 + 1;
-      speed = Math.random() * 0.8 + 0.5;
-      blur = Math.random() * 2;
-      alpha = Math.random() * 0.6 + 0.3;
-    } else if (type < 0.8) { // Midground fast snow
-      size = Math.random() * 4 + 2;
-      speed = Math.random() * 1.5 + 1;
-      blur = Math.random() * 4 + 2;
-      alpha = Math.random() * 0.8 + 0.4;
-    } else { // Foreground HUGE glowing ice shards
-      size = Math.random() * 7 + 3;
-      speed = Math.random() * 3 + 2;
-      blur = Math.random() * 12 + 6;
-      alpha = Math.random() * 0.7 + 0.3;
+    const layer = Math.random();
+    let r, speed, blur, alpha;
+
+    if (layer < 0.55) {       // far background — tiny, slow
+      r = Math.random() * 1.2 + 0.4;
+      speed = Math.random() * 0.5 + 0.2;
+      blur  = 0;
+      alpha = Math.random() * 0.4 + 0.15;
+    } else if (layer < 0.82) { // mid — medium, normal speed
+      r = Math.random() * 2.5 + 1.5;
+      speed = Math.random() * 1.0 + 0.6;
+      blur  = Math.random() * 3;
+      alpha = Math.random() * 0.55 + 0.3;
+    } else {                   // foreground — big, glowing ice shards
+      r = Math.random() * 4.5 + 2;
+      speed = Math.random() * 1.8 + 1.2;
+      blur  = Math.random() * 10 + 5;
+      alpha = Math.random() * 0.65 + 0.35;
     }
 
     particles.push({
       x: Math.random() * W,
       y: Math.random() * H,
-      r: size,
-      vx: (Math.random() - 0.5) * speed * 2 - (speed * 0.6), // Stronger wind to the left
-      vy: speed,
-      blur: blur,
-      alpha: alpha,
+      r, speed, blur, alpha,
+      vx: (Math.random() - 0.5) * speed,
+      vy: speed * (0.7 + Math.random() * 0.5),
       wobble: Math.random() * Math.PI * 2,
-      wobbleSpeed: (Math.random() - 0.5) * 0.08,
-      isCore: type >= 0.8 // flag for drawing bright center
+      wobbleSpd: (Math.random() - 0.5) * 0.06,
+      isShard: layer >= 0.82
     });
   }
 
   function draw() {
     ctx.clearRect(0, 0, W, H);
-    
+
     particles.forEach(p => {
-      p.wobble += p.wobbleSpeed;
-      p.x += p.vx + Math.sin(p.wobble) * 1.2; // stronger sway
+      p.wobble += p.wobbleSpd;
+      p.x += p.vx + Math.sin(p.wobble) * 0.8;
       p.y += p.vy;
-      
-      // Wrap around with buffer
-      if (p.x < -30) p.x = W + 30; 
-      if (p.x > W + 30) p.x = -30;
-      if (p.y > H + 30) {
-        p.y = -30;
-        p.x = Math.random() * W;
-      }
+
+      if (p.x < -20) p.x = W + 20;
+      if (p.x > W + 20) p.x = -20;
+      if (p.y > H + 20) { p.y = -20; p.x = Math.random() * W; }
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      
-      if (p.blur > 0) {
-        ctx.shadowBlur = p.blur;
-        ctx.shadowColor = `rgba(160, 240, 255, ${p.alpha})`;
-      } else {
-        ctx.shadowBlur = 0;
-      }
-      
-      const hue = 190 + Math.random() * 15;
-      ctx.fillStyle = `hsla(${hue}, 100%, 85%, ${p.alpha})`;
+
+      ctx.shadowBlur  = p.blur;
+      ctx.shadowColor = `rgba(160,240,255,${p.alpha})`;
+
+      const hue = 185 + Math.random() * 20;
+      ctx.fillStyle = `hsla(${hue},100%,88%,${p.alpha})`;
       ctx.fill();
 
-      // If it's a huge ice shard, draw a bright solid white center
-      if (p.isCore) {
+      // Bright white core for ice shards
+      if (p.isShard && p.r > 3) {
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r * 0.4, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.r * 0.35, 0, Math.PI * 2);
         ctx.shadowBlur = 0;
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha + 0.2})`;
+        ctx.fillStyle  = `rgba(255,255,255,${Math.min(p.alpha + 0.3, 1)})`;
         ctx.fill();
       }
     });
-    
+
     requestAnimationFrame(draw);
   }
   draw();
 })();
 
+
+/* ============================================================
+   DOM READY
+   ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ---- NAVBAR SCROLL ----
+  /* ---- NAVBAR SCROLL ---- */
   const navbar = document.getElementById('navbar');
   if (navbar) {
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
   }
 
-  // ---- SECTION REVEALS ----
-  const revealEls = document.querySelectorAll('.reveal, .reveal-child');
+  /* ---- SECTION REVEALS ---- */
   if ('IntersectionObserver' in window) {
-    const ro = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // stagger children
-          const children = entry.target.querySelectorAll('.reveal-child');
-          children.forEach((c, i) => {
-            setTimeout(() => c.classList.add('visible'), i * 100);
-          });
-          entry.target.classList.add('visible');
-          ro.unobserve(entry.target);
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          ro.unobserve(e.target);
         }
       });
-    }, { threshold: 0.08 });
-    revealEls.forEach(el => ro.observe(el));
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
   } else {
-    revealEls.forEach(el => el.classList.add('visible'));
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
   }
 
-  // ---- LANGUAGE TOGGLE ----
+  /* ---- LANGUAGE TOGGLE ---- */
   const langBtn = document.getElementById('lang-toggle');
   let lang = 'ar';
 
@@ -137,77 +129,59 @@ document.addEventListener('DOMContentLoaded', () => {
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
       document.body.className = `lang-${lang}`;
       langBtn.textContent = lang === 'ar' ? 'EN' : 'AR';
-
       document.querySelectorAll('[data-ar][data-en]').forEach(el => {
         el.textContent = el.getAttribute(`data-${lang}`);
       });
     });
   }
 
-  // ---- COUNTER ANIMATION ----
+  /* ---- COUNTER ANIMATION ---- */
   function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
 
-  function animateCounter(el) {
-    const target = +el.getAttribute('data-target');
-    const duration = 1800;
-    const start = performance.now();
+  function runCounter(el) {
+    const target = +el.dataset.target;
+    const dur    = 1800;
+    const start  = performance.now();
     (function step(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      el.textContent = Math.round(easeOutQuart(progress) * target);
-      if (progress < 1) requestAnimationFrame(step);
+      const p = Math.min((now - start) / dur, 1);
+      el.textContent = Math.round(easeOutQuart(p) * target);
+      if (p < 1) requestAnimationFrame(step);
       else el.textContent = target;
     })(performance.now());
   }
 
-  const counters = document.querySelectorAll('.counter');
-  const statsGrid = document.querySelector('.stats-grid');
-  let counted = false;
+  const counters   = document.querySelectorAll('.counter');
+  const statsGrid  = document.querySelector('.stats-grid');
+  let   counted    = false;
 
   if (statsGrid && counters.length) {
     const co = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting && !counted) {
         counted = true;
-        counters.forEach(animateCounter);
+        counters.forEach(runCounter);
       }
-    }, { threshold: 0.4 });
+    }, { threshold: 0.3 });
     co.observe(statsGrid);
   }
 
-  // ---- 3D TILT (desktop only) ----
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    document.querySelectorAll('.tilt-element').forEach(el => {
-      el.addEventListener('mousemove', e => {
-        const r = el.getBoundingClientRect();
-        const x = ((e.clientX - r.left) / r.width  - 0.5) * 12;
-        const y = ((e.clientY - r.top)  / r.height - 0.5) * -12;
-        el.style.transform = `perspective(900px) rotateX(${y}deg) rotateY(${x}deg)`;
-      });
-      el.addEventListener('mouseleave', () => {
-        el.style.transition = 'transform 0.5s var(--ease, ease)';
-        el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
-        setTimeout(() => { el.style.transition = ''; }, 500);
-      });
-      el.addEventListener('mouseenter', () => { el.style.transition = 'none'; });
-    });
-  }
-
-  // ---- BEFORE/AFTER SLIDERS ----
+  /* ---- BEFORE/AFTER SLIDERS ---- */
   document.querySelectorAll('.ba-slider-wrap').forEach(wrap => {
-    const after   = wrap.querySelector('.ba-after');
-    const handle  = wrap.querySelector('.ba-handle');
-    let dragging  = false;
-    const isRTL   = () => document.documentElement.dir === 'rtl';
+    const after  = wrap.querySelector('.ba-after');
+    const handle = wrap.querySelector('.ba-handle');
+    let dragging = false;
 
-    function setPos(x) {
+    function setPos(clientX) {
       const rect = wrap.getBoundingClientRect();
-      const pct  = Math.max(0, Math.min((x - rect.left) / rect.width, 1)) * 100;
+      const pct  = Math.max(0, Math.min((clientX - rect.left) / rect.width, 1)) * 100;
+      const isRTL = document.documentElement.dir === 'rtl';
       handle.style.left = `${pct}%`;
-      if (isRTL()) {
-        after.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
-      } else {
-        after.style.clipPath = `inset(0 0 0 ${pct}%)`;
-      }
+      after.style.clipPath = isRTL
+        ? `inset(0 ${100 - pct}% 0 0)`
+        : `inset(0 0 0 ${pct}%)`;
     }
+
+    // Set default slider position
+    setPos(wrap.getBoundingClientRect().left + wrap.offsetWidth * 0.5);
 
     wrap.addEventListener('mousedown',  e => { dragging = true; setPos(e.clientX); });
     wrap.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
@@ -216,5 +190,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
     window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
   });
+
+  /* ---- 3D TILT ON CARDS (desktop only) ---- */
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.pkg-card, .method-card').forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width  - 0.5) * 10;
+        const y = ((e.clientY - r.top)  / r.height - 0.5) * -10;
+        el.style.transform = `perspective(900px) rotateX(${y}deg) rotateY(${x}deg) translateY(-4px)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transition = 'transform 0.5s cubic-bezier(0.22,1,0.36,1)';
+        el.style.transform  = '';
+        setTimeout(() => { el.style.transition = ''; }, 500);
+      });
+      el.addEventListener('mouseenter', () => { el.style.transition = 'none'; });
+    });
+  }
 
 });

@@ -6,7 +6,7 @@
   <title>Ahmed Essa | Online Coach</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="lang-ar">
@@ -15,174 +15,186 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#" class="logo-link">
-        <span class="logo-ae">AE</span>
+        <div class="logo-badge"><span class="logo-ae">AE</span></div>
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="#about" data-ar="من أنا" data-en="About">من أنا</a>
-        <a href="#results" data-ar="النتائج" data-en="Results">النتائج</a>
-        <a href="#features" data-ar="العروض" data-en="Features">العروض</a>
-        <a href="#pricing" data-ar="الباقات" data-en="Packages">الباقات</a>
-        <a href="#faq" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a>
+        <a href="#about"    data-ar="من أنا"    data-en="About">من أنا</a>
+        <a href="#results"  data-ar="التحولات"  data-en="Results">التحولات</a>
+        <a href="#features" data-ar="المنهج"    data-en="Method">المنهج</a>
+        <a href="#pricing"  data-ar="الباقات"   data-en="Packages">الباقات</a>
       </div>
       <div class="nav-actions">
         <button class="lang-btn" id="lang-toggle">EN</button>
-        <a href="https://wa.me/201020004091" class="btn-primary nav-cta" data-ar="ابدأ رحلتك" data-en="Start Now">ابدأ رحلتك</a>
+        <a href="https://wa.me/201020004091" class="nav-cta-btn" data-ar="ابدأ الآن" data-en="Start Now">ابدأ الآن</a>
       </div>
     </div>
   </nav>
 
   <!-- ========== HERO ========== -->
   <header class="hero" id="home">
-    <!-- Background effects -->
-    <div class="hero-bg">
-      <canvas id="particles-canvas"></canvas>
-      <div class="hero-ring ring-outer"></div>
-      <div class="hero-ring ring-mid"></div>
-      <div class="hero-ring ring-inner"></div>
-      <div class="hero-glow-spot"></div>
-      <!-- Ice crack overlays -->
-      <svg class="ice-crack ice-crack-1" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M100 0 L80 60 L110 90 L60 180 L90 200 L50 320 L80 380 L100 400" stroke="rgba(160,220,255,0.12)" stroke-width="1.5" fill="none"/>
-        <path d="M80 60 L40 80 L20 120" stroke="rgba(160,220,255,0.08)" stroke-width="1" fill="none"/>
-        <path d="M110 90 L150 110 L180 95" stroke="rgba(160,220,255,0.08)" stroke-width="1" fill="none"/>
-        <path d="M60 180 L20 200 L0 250" stroke="rgba(160,220,255,0.06)" stroke-width="0.8" fill="none"/>
-        <path d="M90 200 L140 215 L170 260" stroke="rgba(160,220,255,0.07)" stroke-width="0.8" fill="none"/>
-      </svg>
-      <svg class="ice-crack ice-crack-2" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M50 0 L90 80 L60 130 L100 220 L70 300 L110 400" stroke="rgba(100,180,255,0.1)" stroke-width="1.5" fill="none"/>
-        <path d="M90 80 L140 60 L180 80" stroke="rgba(100,180,255,0.07)" stroke-width="1" fill="none"/>
-        <path d="M60 130 L20 150 L0 190" stroke="rgba(100,180,255,0.07)" stroke-width="1" fill="none"/>
-      </svg>
-      <!-- Hex crystal decorations -->
-      <svg class="hex-crystal hex-1" viewBox="0 0 60 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <polygon points="30,2 58,17 58,53 30,68 2,53 2,17" fill="none" stroke="rgba(160,220,255,0.18)" stroke-width="1"/>
-        <polygon points="30,12 48,22 48,48 30,58 12,48 12,22" fill="none" stroke="rgba(160,220,255,0.1)" stroke-width="0.8"/>
-        <line x1="30" y1="2" x2="30" y2="68" stroke="rgba(160,220,255,0.06)" stroke-width="0.6"/>
-        <line x1="2" y1="17" x2="58" y2="53" stroke="rgba(160,220,255,0.06)" stroke-width="0.6"/>
-        <line x1="58" y1="17" x2="2" y2="53" stroke="rgba(160,220,255,0.06)" stroke-width="0.6"/>
-      </svg>
-      <svg class="hex-crystal hex-2" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <polygon points="20,2 38,12 38,34 20,44 2,34 2,12" fill="none" stroke="rgba(100,200,255,0.15)" stroke-width="1"/>
-        <line x1="20" y1="2" x2="20" y2="44" stroke="rgba(100,200,255,0.07)" stroke-width="0.6"/>
-        <line x1="2" y1="12" x2="38" y2="34" stroke="rgba(100,200,255,0.07)" stroke-width="0.6"/>
-        <line x1="38" y1="12" x2="2" y2="34" stroke="rgba(100,200,255,0.07)" stroke-width="0.6"/>
-      </svg>
-      <svg class="hex-crystal hex-3" viewBox="0 0 30 35" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <polygon points="15,2 28,9 28,26 15,33 2,26 2,9" fill="none" stroke="rgba(180,230,255,0.12)" stroke-width="1"/>
-      </svg>
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Ambient glows -->
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-glow hero-glow-3"></div>
+
+    <!-- Geometric grid lines -->
+    <div class="hero-grid-lines" aria-hidden="true">
+      <div class="gl gl-1"></div><div class="gl gl-2"></div>
+      <div class="gl gl-3"></div><div class="gl gl-4"></div>
     </div>
+
+    <!-- Giant watermark -->
+    <div class="hero-watermark" aria-hidden="true">AE</div>
 
     <div class="hero-layout">
       <!-- Text side -->
       <div class="hero-text">
-        <p class="hero-label">
-          <span class="label-line"></span>
-          <span data-ar="ONLINE COACH" data-en="ONLINE COACH">ONLINE COACH</span>
-        </p>
-
-        <!-- SVG Drawn text — each letter stroked then filled -->
-        <div class="hero-name-wrap" aria-label="Ahmed Essa" dir="ltr">
-          <svg class="hero-svg-title" viewBox="0 0 640 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <text class="svg-stroke-text" x="0" y="100" font-family="Montserrat, sans-serif" font-weight="900" font-size="118" letter-spacing="-4">AHMED</text>
-          </svg>
-          <svg class="hero-svg-title hero-svg-title--delay" viewBox="0 0 380 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <text class="svg-stroke-text svg-fill-blue" x="0" y="100" font-family="Montserrat, sans-serif" font-weight="900" font-size="118" letter-spacing="-4">ESSA</text>
-          </svg>
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span data-ar="متاح للتسجيل الآن" data-en="Now Accepting Clients">متاح للتسجيل الآن</span>
         </div>
 
-        <p class="hero-sub" data-ar="مش مجرد مدرب." data-en="Not just a coach.">مش مجرد مدرب.</p>
-        <p class="hero-tagline">
-          <span class="blue-text" data-ar="أنا شريك رحلتك نحو أفضل نسخة منك." data-en="I'm your partner to your best self.">أنا شريك رحلتك نحو أفضل نسخة منك.</span>
+        <div class="hero-name-block" dir="ltr">
+          <div class="hero-name-line hn-ahmed">AHMED</div>
+          <div class="hero-name-line hn-essa">ESSA</div>
+        </div>
+
+        <div class="hero-role-line">
+          <span class="role-bar"></span>
+          <span class="role-text" data-ar="مدرب أونلاين معتمد" data-en="Certified Online Coach">مدرب أونلاين معتمد</span>
+          <span class="role-bar"></span>
+        </div>
+
+        <p class="hero-desc"
+           data-ar="مش بنبيعلك حلم. بنبنيلك جسم وعقل يفضل معاك طول عمرك."
+           data-en="We don't sell dreams. We build a body and mindset that lasts a lifetime.">
+          مش بنبيعلك حلم. بنبنيلك جسم وعقل يفضل معاك طول عمرك.
         </p>
+
         <div class="hero-actions">
-          <a href="https://wa.me/201020004091" class="btn-primary btn-lg">
-            <span data-ar="ابدأ رحلتك الآن" data-en="Start Your Journey">ابدأ رحلتك الآن</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-          <button class="btn-ghost btn-lg">
-            <span class="play-ring">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          <a href="https://wa.me/201020004091" class="cta-primary">
+            <span class="cta-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </span>
-            <span data-ar="شاهد الفيديو" data-en="Watch Video">شاهد الفيديو</span>
-          </button>
+            <span data-ar="ابدأ رحلتك الآن" data-en="Start Your Journey">ابدأ رحلتك الآن</span>
+          </a>
+          <a href="#results" class="cta-secondary">
+            <span data-ar="شوف النتائج" data-en="View Results">شوف النتائج</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+          </a>
+        </div>
+
+        <div class="hero-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-num">+550</span>
+            <span class="mini-label" data-ar="عميل" data-en="Clients">عميل</span>
+          </div>
+          <div class="mini-div"></div>
+          <div class="mini-stat">
+            <span class="mini-num">7+</span>
+            <span class="mini-label" data-ar="سنين خبرة" data-en="Yrs Exp">سنين خبرة</span>
+          </div>
+          <div class="mini-div"></div>
+          <div class="mini-stat">
+            <span class="mini-num">92%</span>
+            <span class="mini-label" data-ar="رضا العملاء" data-en="Satisfaction">رضا العملاء</span>
+          </div>
         </div>
       </div>
 
-      <!-- Coach image -->
+      <!-- Coach image side -->
       <div class="hero-visual">
-        <div class="coach-frame">
-          <div class="ae-watermark">AE</div>
-          <div class="coach-glow"></div>
-          <img src="images/coach1.jpg" alt="Ahmed Essa" class="coach-img"
-               fetchpriority="high" loading="eager" decoding="async"
-               width="500" height="700">
-          <div class="coach-spotlight"></div>
+        <div class="coach-card">
+          <div class="coach-ring cr-1"></div>
+          <div class="coach-ring cr-2"></div>
+          <div class="coach-ring cr-3"></div>
+          <div class="coach-glow-bg"></div>
+          <img src="images/coach1.jpg" alt="Coach Ahmed Essa" class="coach-img"
+               fetchpriority="high" loading="eager" decoding="async">
+          <div class="coach-badge-top">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <span data-ar="مدرب معتمد" data-en="Certified Coach">مدرب معتمد</span>
+          </div>
+          <div class="coach-badge-bottom">
+            <div class="cbb-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            </div>
+            <div>
+              <div class="cbb-num">-24 KG</div>
+              <div class="cbb-label" data-ar="أسرع تحول" data-en="Fastest Transform">أسرع تحول</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="scroll-hint">
-      <span data-ar="SCROLL" data-en="SCROLL">SCROLL</span>
-      <div class="scroll-line"></div>
+    <div class="scroll-indicator">
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+      <span>SCROLL</span>
     </div>
   </header>
 
   <!-- ========== ABOUT ========== -->
-  <section class="about-section reveal" id="about">
-    <div class="section-watermark">AE</div>
+  <section class="about-section" id="about">
     <div class="wrap">
       <div class="about-grid">
-        <div class="about-text">
-          <span class="section-label" data-ar="ABOUT ME" data-en="ABOUT ME">ABOUT ME</span>
-          <h2 class="section-heading">
-            <span data-ar="من الشغف." data-en="From passion.">من الشغف.</span><br>
-            <span class="blue-text" data-ar="صنعت الاحتراف." data-en="I built mastery.">صنعت الاحتراف.</span>
-          </h2>
-          <p class="about-desc" data-ar="أنا أحمد عيسى، مدرب معتمد وخبير في التغذية والتدريب. أساعدك في تحقيق أهدافك من خلال خطط مناسبة لك. الناتج اللي أنت شايفه... كان شخص اتحدى نفسه." data-en="I am Ahmed Essa, a certified trainer and nutrition expert. I help you achieve your goals through personalized plans. The results you see started with one decision.">
-            أنا أحمد عيسى، مدرب معتمد وخبير في التغذية والتدريب. أساعدك في تحقيق أهدافك من خلال خطط مناسبة لك. الناتج اللي أنت شايفه... كان شخص اتحدى نفسه.
-          </p>
-          <a href="#pricing" class="btn-ghost-sm">
-            <span data-ar="تعرف علي أكثر" data-en="Learn More">تعرف علي أكثر</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
+        <div class="about-img-col reveal">
+          <div class="about-img-wrap">
+            <div class="about-img-glow"></div>
+            <img src="images/coach1.jpg" alt="Ahmed Essa" class="about-img" loading="lazy">
+            <div class="about-img-border"></div>
+            <div class="exp-badge">
+              <span class="exp-num">7+</span>
+              <span class="exp-label" data-ar="سنوات" data-en="Years">سنوات</span>
+            </div>
+          </div>
         </div>
 
-        <div class="stats-grid">
-          <div class="stat-card glass reveal-child">
-            <div class="stat-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-            </div>
-            <div class="stat-body">
-              <div class="stat-num">+<span class="counter" data-target="550">0</span></div>
-              <p class="stat-label" data-ar="عميل حققوا نتائج" data-en="Clients with results">عميل حققوا نتائج</p>
-            </div>
+        <div class="about-content reveal">
+          <div class="tag-line">
+            <span class="tag-dot"></span>
+            <span data-ar="من أنا" data-en="ABOUT ME">من أنا</span>
           </div>
-          <div class="stat-card glass reveal-child">
-            <div class="stat-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          <h2 class="section-title">
+            <span data-ar="رحلتي بدأت" data-en="My journey started">رحلتي بدأت</span><br>
+            <span class="text-ice" data-ar="بقرار واحد." data-en="with one decision.">بقرار واحد.</span>
+          </h2>
+          <p class="about-para"
+             data-ar="أنا أحمد عيسى، مدرب لياقة معتمد وخبير تغذية. ساعدت أكتر من 550 عميل يحققوا نتائج حقيقية. مش بنبيع خطط جاهزة — كل حاجة بتتعمل عشانك أنت وجسمك."
+             data-en="I'm Ahmed Essa, certified fitness coach and nutrition expert. I've helped 550+ clients achieve real results. We don't sell generic plans — everything is built for you and your body.">
+            أنا أحمد عيسى، مدرب لياقة معتمد وخبير تغذية. ساعدت أكتر من 550 عميل يحققوا نتائج حقيقية. مش بنبيع خطط جاهزة — كل حاجة بتتعمل عشانك أنت وجسمك.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <div class="stat-num-wrap">+<span class="counter" data-target="550">0</span></div>
+              <div class="stat-lbl" data-ar="عميل ناجح" data-en="Happy Clients">عميل ناجح</div>
             </div>
-            <div class="stat-body">
-              <div class="stat-num">+<span class="counter" data-target="7">0</span></div>
-              <p class="stat-label" data-ar="سنوات من الخبرة" data-en="Years experience">سنوات من الخبرة</p>
+            <div class="stat-card">
+              <div class="stat-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              </div>
+              <div class="stat-num-wrap"><span class="counter" data-target="7">0</span>+</div>
+              <div class="stat-lbl" data-ar="سنوات خبرة" data-en="Years Exp">سنوات خبرة</div>
             </div>
-          </div>
-          <div class="stat-card glass reveal-child">
-            <div class="stat-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <div class="stat-card">
+              <div class="stat-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div class="stat-num-wrap">+<span class="counter" data-target="35">0</span>K</div>
+              <div class="stat-lbl" data-ar="متابع" data-en="Followers">متابع</div>
             </div>
-            <div class="stat-body">
-              <div class="stat-num">+<span class="counter" data-target="35">0</span>K</div>
-              <p class="stat-label" data-ar="متابع على السوشيال" data-en="Social followers">متابع على السوشيال</p>
-            </div>
-          </div>
-          <div class="stat-card glass reveal-child">
-            <div class="stat-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </div>
-            <div class="stat-body">
-              <div class="stat-num">+<span class="counter" data-target="92">0</span>%</div>
-              <p class="stat-label" data-ar="نسبة رضا العملاء" data-en="Client satisfaction">نسبة رضا العملاء</p>
+            <div class="stat-card">
+              <div class="stat-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <div class="stat-num-wrap"><span class="counter" data-target="92">0</span>%</div>
+              <div class="stat-lbl" data-ar="نسبة رضا" data-en="Satisfaction">نسبة رضا</div>
             </div>
           </div>
         </div>
@@ -191,196 +203,221 @@
   </section>
 
   <!-- ========== RESULTS ========== -->
-  <section class="results-section reveal" id="results">
+  <section class="results-section" id="results">
+    <div class="results-bg-glow"></div>
     <div class="wrap">
-      <div class="section-header text-center">
-        <span class="section-label" data-ar="TRANSFORMATIONS" data-en="TRANSFORMATIONS">TRANSFORMATIONS</span>
-        <h2 class="section-heading">
-          <span data-ar="النتائج" data-en="The Results">النتائج</span>
-          <span class="blue-text" data-ar=" تتكلم." data-en=" speak."> تتكلم.</span>
+      <div class="section-intro text-center reveal">
+        <div class="tag-line centered">
+          <span class="tag-dot"></span>
+          <span data-ar="TRANSFORMATIONS" data-en="TRANSFORMATIONS">TRANSFORMATIONS</span>
+          <span class="tag-dot"></span>
+        </div>
+        <h2 class="section-title">
+          <span data-ar="النتائج" data-en="Results">النتائج</span>
+          <span class="text-ice" data-ar=" بتتكلم عن نفسها." data-en=" speak for themselves."> بتتكلم عن نفسها.</span>
         </h2>
-        <div class="heading-rule"></div>
       </div>
 
-      <div class="ba-track">
-        <div class="ba-card glass">
-          <div class="ba-slider-wrap" data-dir="rtl">
-            <div class="ba-before"><img src="images/before1.jpg" alt="Before"></div>
-            <div class="ba-after"><img src="images/after1.jpg" alt="After"></div>
-            <div class="ba-handle"><div class="ba-handle-inner"></div></div>
-            <span class="ba-tag ba-tag-before" data-ar="قبل" data-en="Before">قبل</span>
-            <span class="ba-tag ba-tag-after" data-ar="بعد" data-en="After">بعد</span>
+      <div class="ba-track reveal">
+        <div class="ba-card">
+          <div class="ba-label-row">
+            <span class="ba-tag" data-ar="قبل" data-en="Before">قبل</span>
+            <div class="ba-result-badge">-24 KG</div>
+            <span class="ba-tag" data-ar="بعد" data-en="After">بعد</span>
           </div>
-          <div class="ba-result">-24 <span>KG</span></div>
-        </div>
-        <div class="ba-card glass">
           <div class="ba-slider-wrap" data-dir="rtl">
-            <div class="ba-before"><img src="images/before2.jpg" alt="Before"></div>
-            <div class="ba-after"><img src="images/after2.jpg" alt="After"></div>
+            <div class="ba-before"><img src="images/before1.jpg" alt="Before" loading="lazy"></div>
+            <div class="ba-after"><img src="images/after1.jpg" alt="After" loading="lazy"></div>
             <div class="ba-handle"><div class="ba-handle-inner"></div></div>
-            <span class="ba-tag ba-tag-before" data-ar="قبل" data-en="Before">قبل</span>
-            <span class="ba-tag ba-tag-after" data-ar="بعد" data-en="After">بعد</span>
           </div>
-          <div class="ba-result">-18 <span>KG</span></div>
         </div>
-      </div>
-
-      <div class="cta-inline text-center">
-        <a href="https://wa.me/201020004091" class="btn-ghost-sm">
-          <span data-ar="عرض المزيد من النتائج" data-en="View More Results">عرض المزيد من النتائج</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
+        <div class="ba-card">
+          <div class="ba-label-row">
+            <span class="ba-tag" data-ar="قبل" data-en="Before">قبل</span>
+            <div class="ba-result-badge">-18 KG</div>
+            <span class="ba-tag" data-ar="بعد" data-en="After">بعد</span>
+          </div>
+          <div class="ba-slider-wrap" data-dir="rtl">
+            <div class="ba-before"><img src="images/before2.jpg" alt="Before" loading="lazy"></div>
+            <div class="ba-after"><img src="images/after2.jpg" alt="After" loading="lazy"></div>
+            <div class="ba-handle"><div class="ba-handle-inner"></div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== FEATURES ========== -->
-  <section class="features-section reveal" id="features">
-    <div class="features-bg"><img src="images/coach3.jpg" alt=""><div class="features-overlay"></div></div>
+  <!-- ========== METHOD ========== -->
+  <section class="method-section" id="features">
+    <div class="method-bg">
+      <img src="images/coach3.jpg" alt="" aria-hidden="true" loading="lazy">
+      <div class="method-overlay"></div>
+    </div>
     <div class="wrap">
-      <div class="section-header">
-        <span class="section-label" data-ar="THE METHOD" data-en="THE METHOD">THE METHOD</span>
-        <h2 class="section-heading">
+      <div class="section-intro reveal">
+        <div class="tag-line">
+          <span class="tag-dot"></span>
+          <span data-ar="المنهج" data-en="THE METHOD">المنهج</span>
+        </div>
+        <h2 class="section-title">
           <span data-ar="مش وزن بس." data-en="Not just weight.">مش وزن بس.</span><br>
-          <span class="blue-text" data-ar="ده أسلوب حياة." data-en="It's a lifestyle.">ده أسلوب حياة.</span>
+          <span class="text-ice" data-ar="ده أسلوب حياة." data-en="It's a lifestyle.">ده أسلوب حياة.</span>
         </h2>
       </div>
-      <div class="features-grid">
-        <div class="feat-item glass">
-          <div class="feat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+      <div class="method-grid reveal">
+        <div class="method-card">
+          <div class="method-num">01</div>
+          <div class="method-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
           </div>
-          <p data-ar="خطط مخصصة 100%" data-en="100% Custom Plans">خطط مخصصة 100%</p>
+          <h3 data-ar="خطة مخصصة 100%" data-en="100% Custom Plan">خطة مخصصة 100%</h3>
+          <p data-ar="مفيش خطة عامة. كل حاجة بتتعمل على أساس جسمك وهدفك." data-en="No generic plans. Everything built around your body and your goal.">مفيش خطة عامة. كل حاجة بتتعمل على أساس جسمك وهدفك.</p>
         </div>
-        <div class="feat-item glass">
-          <div class="feat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+        <div class="method-card">
+          <div class="method-num">02</div>
+          <div class="method-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
           </div>
-          <p data-ar="تغذية مرنة مستدامة" data-en="Flexible Nutrition">تغذية مرنة مستدامة</p>
+          <h3 data-ar="تغذية مرنة" data-en="Flexible Nutrition">تغذية مرنة</h3>
+          <p data-ar="نظام يتناسب مع حياتك، مش العكس. استمرارية بدون حرمان." data-en="A diet that fits your life. Sustainable, not restrictive.">نظام يتناسب مع حياتك، مش العكس. استمرارية بدون حرمان.</p>
         </div>
-        <div class="feat-item glass">
-          <div class="feat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        <div class="method-card">
+          <div class="method-num">03</div>
+          <div class="method-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
           </div>
-          <p data-ar="تدريب ذكي ومقنن" data-en="Smart Training">تدريب ذكي ومقنن</p>
+          <h3 data-ar="تدريب ذكي" data-en="Smart Training">تدريب ذكي</h3>
+          <p data-ar="مش مجرد تعب، ده تدريب منظم يوصلك للنتيجة بأذكى طريقة." data-en="Not just hard work — structured training that gets results the smart way.">مش مجرد تعب، ده تدريب منظم يوصلك للنتيجة بأذكى طريقة.</p>
         </div>
-        <div class="feat-item glass">
-          <div class="feat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+        <div class="method-card">
+          <div class="method-num">04</div>
+          <div class="method-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
           </div>
-          <p data-ar="دعم ذهني وتطوير" data-en="Mental Support">دعم ذهني وتطوير</p>
+          <h3 data-ar="دعم مستمر" data-en="Ongoing Support">دعم مستمر</h3>
+          <p data-ar="مش لوحدك في الرحلة دي. أنا معاك خطوة بخطوة طول الطريق." data-en="You're not alone. I'm with you every single step of the way.">مش لوحدك في الرحلة دي. أنا معاك خطوة بخطوة طول الطريق.</p>
         </div>
-        <div class="feat-item glass">
-          <div class="feat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        <div class="method-card">
+          <div class="method-num">05</div>
+          <div class="method-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
           </div>
-          <p data-ar="متابعة وقياس مستمر" data-en="Ongoing Tracking">متابعة وقياس مستمر</p>
+          <h3 data-ar="قياس ومتابعة" data-en="Tracking & Results">قياس ومتابعة</h3>
+          <p data-ar="بنقيس كل حاجة ونحسن على أساس بيانات حقيقية مش حدس." data-en="We measure everything and improve based on real data, not guesswork.">بنقيس كل حاجة ونحسن على أساس بيانات حقيقية مش حدس.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== PRICING ========== -->
-  <section class="pricing-section reveal" id="pricing">
-    <div class="section-watermark right-wm">AE</div>
+  <section class="pricing-section" id="pricing">
+    <div class="pricing-glow"></div>
     <div class="wrap">
-      <div class="pricing-top">
-        <div>
-          <span class="section-label" data-ar="PACKAGES" data-en="PACKAGES">PACKAGES</span>
-          <h2 class="section-heading">
-            <span data-ar="اختر الباقة اللي" data-en="Choose the package">اختر الباقة اللي</span><br>
-            <span class="blue-text" data-ar="تناسب هدفك." data-en="that fits your goal.">تناسب هدفك.</span>
-          </h2>
+      <div class="section-intro text-center reveal">
+        <div class="tag-line centered">
+          <span class="tag-dot"></span>
+          <span data-ar="PACKAGES" data-en="PACKAGES">PACKAGES</span>
+          <span class="tag-dot"></span>
         </div>
-        <a href="#" class="btn-ghost-sm compare-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          <span data-ar="مقارنة الباقات" data-en="Compare Packages">مقارنة الباقات</span>
-        </a>
+        <h2 class="section-title">
+          <span data-ar="اختر باقتك" data-en="Choose your">اختر باقتك</span>
+          <span class="text-ice" data-ar=" وابدأ." data-en=" package."> وابدأ.</span>
+        </h2>
+        <p class="section-subtitle" data-ar="كل الباقات بتشمل دعم مباشر عبر واتساب" data-en="All packages include direct WhatsApp support">كل الباقات بتشمل دعم مباشر عبر واتساب</p>
       </div>
 
-      <div class="pricing-cards">
+      <div class="pricing-grid reveal">
         <!-- STARTER -->
-        <div class="pkg-card glass tilt-element">
-          <div class="pkg-glow"></div>
-          <div class="pkg-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <div class="pkg-tier">STARTER</div>
+            <div class="pkg-duration" data-ar="شهر واحد" data-en="1 Month">شهر واحد</div>
           </div>
-          <h3 class="pkg-name">STARTER</h3>
-          <p class="pkg-sub" data-ar="بداية رحلتك نحو نسخة أفضل" data-en="Begin your journey">بداية رحلتك نحو نسخة أفضل</p>
-          <ul class="pkg-features">
-            <li class="feat-yes"><span class="chk">✓</span><span data-ar="خطة تدريب أساسية" data-en="Basic Training Plan">خطة تدريب أساسية</span></li>
-            <li class="feat-yes"><span class="chk">✓</span><span data-ar="نظام غذائي محسوب" data-en="Diet Plan">نظام غذائي محسوب</span></li>
-            <li class="feat-yes"><span class="chk">✓</span><span data-ar="دعم عبر واتساب" data-en="WhatsApp Support">دعم عبر واتساب</span></li>
-            <li class="feat-no"><span class="chk">×</span><span data-ar="متابعة أسبوعية" data-en="Weekly Follow-up">متابعة أسبوعية</span></li>
+          <div class="pkg-price-row">
+            <span class="pkg-cur">EGP</span>
+            <span class="pkg-amt">350</span>
+          </div>
+          <ul class="pkg-list">
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="خطة تدريب أساسية" data-en="Basic Training Plan">خطة تدريب أساسية</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="نظام غذائي" data-en="Diet Plan">نظام غذائي</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="دعم واتساب" data-en="WhatsApp Support">دعم واتساب</span></li>
+            <li class="pkg-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span data-ar="متابعة أسبوعية" data-en="Weekly Follow-up">متابعة أسبوعية</span></li>
           </ul>
-          <div class="pkg-price">
-            <span class="price-num">350</span>
-            <span class="price-cur">EGP</span>
-          </div>
-          <a href="https://wa.me/201020004091?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D9%83%D8%A7%D8%A8%D8%AA%D9%86%20%D8%A3%D8%AD%D9%85%D8%AF%0A%0A%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20STARTER%0A%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20350%20%D8%AC%D9%86%D9%8A%D9%87%0A%0A%D8%A3%D8%B1%D8%AC%D9%88%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%8A" class="btn-outline-full" data-ar="اختر الباقة" data-en="Choose Package">اختر الباقة</a>
+          <a href="https://wa.me/201020004091?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D9%83%D8%A7%D8%A8%D8%AA%D9%86%20%D8%A3%D8%AD%D9%85%D8%AF%0A%0A%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20STARTER%0A%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20350%20%D8%AC%D9%86%D9%8A%D9%87%0A%0A%D8%A3%D8%B1%D8%AC%D9%88%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%8A" class="pkg-btn" data-ar="ابدأ الآن" data-en="Get Started">ابدأ الآن</a>
         </div>
 
-        <!-- PRO -->
-        <div class="pkg-card glass pkg-popular tilt-element">
-          <div class="popular-badge" data-ar="الأكثر طلباً" data-en="Most Popular">الأكثر طلباً</div>
-          <div class="pkg-glow glow-intense"></div>
-          <div class="pkg-icon blue-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        <!-- PRO (featured) -->
+        <div class="pkg-card pkg-featured">
+          <div class="pkg-popular-badge" data-ar="الأكثر طلباً" data-en="Most Popular">الأكثر طلباً</div>
+          <div class="pkg-glow-bg"></div>
+          <div class="pkg-header">
+            <div class="pkg-tier text-ice">PRO</div>
+            <div class="pkg-duration" data-ar="شهرين" data-en="2 Months">شهرين</div>
           </div>
-          <h3 class="pkg-name blue-text">PRO</h3>
-          <p class="pkg-sub" data-ar="لمن يريد تغيير حقيقي وسريع" data-en="For real and fast change">لمن يريد تغيير حقيقي وسريع</p>
-          <ul class="pkg-features">
-            <li class="feat-yes"><span class="chk blue-text">✓</span><span data-ar="خطة تدريب متقدمة" data-en="Advanced Training Plan">خطة تدريب متقدمة</span></li>
-            <li class="feat-yes"><span class="chk blue-text">✓</span><span data-ar="نظام غذائي مخصص" data-en="Custom Diet Plan">نظام غذائي مخصص</span></li>
-            <li class="feat-yes"><span class="chk blue-text">✓</span><span data-ar="متابعة أسبوعية وتعديلات" data-en="Weekly Follow-up">متابعة أسبوعية وتعديلات</span></li>
-            <li class="feat-yes"><span class="chk blue-text">✓</span><span data-ar="تحليلات أسبوعية للنتائج" data-en="Weekly Analytics">تحليلات أسبوعية للنتائج</span></li>
+          <div class="pkg-price-row">
+            <span class="pkg-cur text-ice">EGP</span>
+            <span class="pkg-amt text-ice">600</span>
+          </div>
+          <ul class="pkg-list">
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="خطة تدريب متقدمة" data-en="Advanced Training Plan">خطة تدريب متقدمة</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="نظام غذائي مخصص" data-en="Custom Diet Plan">نظام غذائي مخصص</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="متابعة أسبوعية" data-en="Weekly Follow-up">متابعة أسبوعية</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="تحليلات النتائج" data-en="Results Analytics">تحليلات النتائج</span></li>
           </ul>
-          <div class="pkg-price">
-            <span class="price-num">600</span>
-            <span class="price-cur">EGP</span>
-          </div>
-          <a href="https://wa.me/201020004091?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D9%83%D8%A7%D8%A8%D8%AA%D9%86%20%D8%A3%D8%AD%D9%85%D8%AF%0A%0A%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20PRO%0A%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20600%20%D8%AC%D9%86%D9%8A%D9%87%0A%0A%D8%A3%D8%B1%D8%AC%D9%88%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%8A" class="btn-primary-full" data-ar="اختر الباقة" data-en="Choose Package">اختر الباقة</a>
+          <a href="https://wa.me/201020004091?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D9%83%D8%A7%D8%A8%D8%AA%D9%86%20%D8%A3%D8%AD%D9%85%D8%AF%0A%0A%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20PRO%0A%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20600%20%D8%AC%D9%86%D9%8A%D9%87%0A%0A%D8%A3%D8%B1%D8%AC%D9%88%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%8A" class="pkg-btn pkg-btn-primary" data-ar="اختار PRO" data-en="Choose PRO">اختار PRO</a>
         </div>
 
         <!-- ELITE -->
-        <div class="pkg-card glass tilt-element">
-          <div class="pkg-glow"></div>
-          <div class="pkg-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <div class="pkg-tier">ELITE</div>
+            <div class="pkg-duration" data-ar="3 أشهر" data-en="3 Months">3 أشهر</div>
           </div>
-          <h3 class="pkg-name">ELITE</h3>
-          <p class="pkg-sub" data-ar="لتحقيق أقصى مستوى من الأداء" data-en="Maximum performance">لتحقيق أقصى مستوى من الأداء</p>
-          <ul class="pkg-features">
-            <li class="feat-yes"><span class="chk">✓</span><span data-ar="خطة تدريب احترافية" data-en="Pro Training Plan">خطة تدريب احترافية</span></li>
-            <li class="feat-yes"><span class="chk">✓</span><span data-ar="نظام غذائي احترافي" data-en="Pro Diet Plan">نظام غذائي احترافي</span></li>
-            <li class="feat-yes"><span class="chk">✓</span><span data-ar="متابعة يومية دقيقة" data-en="Daily Follow-up">متابعة يومية دقيقة</span></li>
-            <li class="feat-yes"><span class="chk">✓</span><span data-ar="دعم مباشر 24/7 ومكالمات" data-en="24/7 Support & Calls">دعم مباشر 24/7 ومكالمات</span></li>
+          <div class="pkg-price-row">
+            <span class="pkg-cur">EGP</span>
+            <span class="pkg-amt">950</span>
+          </div>
+          <ul class="pkg-list">
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="خطة تدريب احترافية" data-en="Pro Training Plan">خطة تدريب احترافية</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="نظام غذائي احترافي" data-en="Pro Diet Plan">نظام غذائي احترافي</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="متابعة يومية" data-en="Daily Follow-up">متابعة يومية</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="دعم 24/7 ومكالمات" data-en="24/7 Support & Calls">دعم 24/7 ومكالمات</span></li>
           </ul>
-          <div class="pkg-price">
-            <span class="price-num">950</span>
-            <span class="price-cur">EGP</span>
-          </div>
-          <a href="https://wa.me/201020004091?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D9%83%D8%A7%D8%A8%D8%AA%D9%86%20%D8%A3%D8%AD%D9%85%D8%AF%0A%0A%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20ELITE%0A%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20950%20%D8%AC%D9%86%D9%8A%D9%87%0A%0A%D8%A3%D8%B1%D8%AC%D9%88%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%8A" class="btn-outline-full" data-ar="اختر الباقة" data-en="Choose Package">اختر الباقة</a>
+          <a href="https://wa.me/201020004091?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D9%83%D8%A7%D8%A8%D8%AA%D9%86%20%D8%A3%D8%AD%D9%85%D8%AF%0A%0A%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20ELITE%0A%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20950%20%D8%AC%D9%86%D9%8A%D9%87%0A%0A%D8%A3%D8%B1%D8%AC%D9%88%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%8A" class="pkg-btn" data-ar="ابدأ الآن" data-en="Get Started">ابدأ الآن</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== FINAL CTA ========== -->
-  <section class="final-cta reveal" id="cta">
-    <div class="cta-bg"><img src="images/coach2.jpg" alt=""><div class="cta-overlay"></div></div>
+  <section class="final-cta">
+    <div class="cta-bg-img">
+      <img src="images/coach2.jpg" alt="" aria-hidden="true" loading="lazy">
+      <div class="cta-overlay"></div>
+    </div>
     <div class="wrap text-center">
-      <h2 class="section-heading cta-title">
-        <span data-ar="جاهز تبدأ" data-en="Ready to start">جاهز تبدأ</span><br>
-        <span class="blue-text" data-ar="التغيير؟" data-en="The Change?">التغيير؟</span>
-      </h2>
-      <p class="cta-sub" data-ar="أول خطوة هي القرار. والباقي... نعمله مع بعض." data-en="The first step is the decision. The rest... we do together.">
-        أول خطوة هي القرار. والباقي... نعمله مع بعض.
-      </p>
-      <a href="https://wa.me/201020004091" class="btn-primary btn-xl">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-ar="ابدأ رحلتك دلوقتي" data-en="Start Your Journey Now">ابدأ رحلتك دلوقتي</span>
-      </a>
+      <div class="cta-content reveal">
+        <div class="tag-line centered">
+          <span class="tag-dot"></span>
+          <span data-ar="READY?" data-en="READY?">READY?</span>
+          <span class="tag-dot"></span>
+        </div>
+        <h2 class="cta-big-title">
+          <span data-ar="جاهز تبدأ" data-en="Ready to start">جاهز تبدأ</span><br>
+          <span class="text-ice" data-ar="التغيير؟" data-en="the change?">التغيير؟</span>
+        </h2>
+        <p class="cta-sub"
+           data-ar="أول خطوة هي القرار. والباقي... نعمله مع بعض."
+           data-en="The first step is the decision. The rest... we do together.">
+          أول خطوة هي القرار. والباقي... نعمله مع بعض.
+        </p>
+        <a href="https://wa.me/201020004091" class="cta-primary cta-xl">
+          <span class="cta-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </span>
+          <span data-ar="ابدأ رحلتك دلوقتي" data-en="Start Your Journey Now">ابدأ رحلتك دلوقتي</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -388,28 +425,30 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <div class="footer-brand">
-        <span class="logo-ae">AE</span>
+        <div class="logo-badge"><span class="logo-ae">AE</span></div>
         <div>
-          <div class="brand-name">AHMED ESSA</div>
-          <div class="brand-title">ONLINE COACH</div>
+          <div class="footer-name">AHMED ESSA</div>
+          <div class="footer-role" data-ar="مدرب أونلاين" data-en="Online Coach">مدرب أونلاين</div>
         </div>
       </div>
       <div class="footer-socials">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="TikTok">TK</a>
-        <a href="#" aria-label="YouTube">YT</a>
-        <a href="https://wa.me/201020004091" aria-label="WhatsApp">WA</a>
+        <a href="#" aria-label="Instagram" class="social-btn">IG</a>
+        <a href="#" aria-label="TikTok"    class="social-btn">TK</a>
+        <a href="#" aria-label="YouTube"   class="social-btn">YT</a>
+        <a href="https://wa.me/201020004091" aria-label="WhatsApp" class="social-btn social-wa">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
       </div>
       <p class="footer-copy"><span dir="ltr">© 2024 Ahmed Essa. All Rights Reserved.</span></p>
     </div>
   </footer>
 
-  <!-- Floating WA -->
+  <!-- Floating WhatsApp -->
   <a href="https://wa.me/201020004091" target="_blank" class="float-wa" aria-label="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <div class="float-wa-pulse"></div>
   </a>
 
-  <canvas id="particles-canvas"></canvas>
   <script src="script.js"></script>
 </body>
 </html>
