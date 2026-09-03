@@ -1,160 +1,215 @@
 'use strict';
 
-/* --- CUSTOM CURSOR & MAGNETIC BUTTONS --- */
-const cursor = document.getElementById('cursor');
-const cursorDot = document.getElementById('cursor-dot');
-let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
-
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursorDot.style.left = `${mouseX}px`;
-  cursorDot.style.top = `${mouseY}px`;
-});
-
-// Smooth cursor follow
-function animateCursor() {
-  let dx = mouseX - cursorX;
-  let dy = mouseY - cursorY;
-  cursorX += dx * 0.15;
-  cursorY += dy * 0.15;
-  cursor.style.left = `${cursorX}px`;
-  cursor.style.top = `${cursorY}px`;
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-// Magnetic buttons hover effect
-document.querySelectorAll('a, button, .plan-tab, .magnetic-btn').forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-  el.addEventListener('mouseleave', () => {
-    document.body.classList.remove('hovering');
-    if(el.classList.contains('magnetic-btn')){
-      el.style.transform = 'translate(0px, 0px)';
-    }
-  });
-});
-
-document.querySelectorAll('.magnetic-btn').forEach(btn => {
-  btn.addEventListener('mousemove', (e) => {
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-  });
-});
-
-
-/* --- LOADER --- */
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // --- LOADER ---
   setTimeout(() => {
     document.getElementById('loader').classList.add('hidden');
-    document.body.style.overflow = 'auto'; // Re-enable scroll
-  }, 1600);
-});
-document.body.style.overflow = 'hidden'; // Disable scroll during load
+  }, 1000);
 
+  // --- NAVBAR SCROLL ---
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
 
-/* --- SCROLL PROGRESS --- */
-const scrollProgress = document.getElementById('scroll-progress');
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
-  scrollProgress.style.width = `${scrollPercent}%`;
-});
-
-
-/* --- MOBILE MENU --- */
-const burger = document.getElementById('burger');
-const mobMenu = document.getElementById('mob-menu');
-burger.addEventListener('click', () => mobMenu.classList.toggle('open'));
-mobMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => mobMenu.classList.remove('open'));
-});
-
-
-/* --- LANGUAGE TOGGLE --- */
-const langBtn = document.getElementById('lang-toggle');
-let currentLang = 'ar';
-langBtn.addEventListener('click', () => {
-  currentLang = currentLang === 'ar' ? 'en' : 'ar';
-  document.documentElement.lang = currentLang;
-  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-  document.body.className = `lang-${currentLang}`;
-  langBtn.textContent = currentLang === 'ar' ? 'EN' : 'AR';
+  // --- MOBILE MENU ---
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
   
-  document.querySelectorAll('[data-ar]').forEach(el => {
-    // If it's a DOM element containing text nodes directly or nested spans
-    if(el.tagName === 'SPAN' || el.tagName === 'A' || el.tagName === 'P' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'STRONG') {
-         el.textContent = currentLang === 'ar' ? el.dataset.ar : el.dataset.en;
-    }
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : 'auto';
   });
-});
 
-
-/* --- REVEAL ANIMATIONS --- */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('revealed');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-
-
-/* --- COUNTERS --- */
-const statObserver = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
-    document.querySelectorAll('.count').forEach(el => {
-      const target = +el.dataset.target;
-      let count = 0;
-      const updateCount = () => {
-        const inc = target / 40;
-        if (count < target) {
-          count += inc;
-          el.innerText = Math.ceil(count);
-          setTimeout(updateCount, 40);
-        } else {
-          el.innerText = target;
-        }
-      };
-      updateCount();
+  const mobileLinks = mobileMenu.querySelectorAll('a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = 'auto';
     });
-    statObserver.disconnect();
-  }
-}, { threshold: 0.5 });
-const aboutStats = document.querySelector('.about-stats');
-if (aboutStats) statObserver.observe(aboutStats);
-
-
-/* --- PRICING TABS --- */
-const planTabs = document.querySelectorAll('.plan-tab');
-const planContents = document.querySelectorAll('.plan-content');
-planTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    // Remove active class from all tabs and contents
-    planTabs.forEach(t => t.classList.remove('active'));
-    planContents.forEach(c => c.classList.remove('active'));
-    
-    // Add active class to clicked tab and corresponding content
-    tab.classList.add('active');
-    const plan = tab.dataset.plan;
-    document.querySelector(`.plan-content[data-plan="${plan}"]`).classList.add('active');
   });
-});
 
+  // --- LANGUAGE TOGGLE ---
+  const langToggle = document.getElementById('lang-toggle');
+  let currentLang = 'ar';
 
-/* --- FAQ ACCORDION --- */
-const faqs = document.querySelectorAll('.faq-row');
-faqs.forEach(faq => {
-  const trigger = faq.querySelector('.faq-trigger');
-  trigger.addEventListener('click', () => {
-    const isOpen = faq.classList.contains('open');
-    faqs.forEach(f => f.classList.remove('open'));
-    if (!isOpen) faq.classList.add('open');
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'ar' ? 'en' : 'ar';
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    document.body.className = `lang-${currentLang}`;
+    langToggle.textContent = currentLang === 'ar' ? 'English' : 'عربي';
+
+    // Update text content based on data attributes
+    const elementsToTranslate = document.querySelectorAll('[data-ar][data-en]');
+    elementsToTranslate.forEach(el => {
+      // For elements with nested tags, we might need a more careful approach, 
+      // but in this HTML, most elements with data-ar are direct text containers
+      // or we update the text node directly.
+      el.textContent = el.getAttribute(`data-${currentLang}`);
+    });
+    
+    // Specifically handle the highlight text in hero
+    const highlightSpan = document.querySelector('.hero-title .highlight');
+    if(highlightSpan) {
+       highlightSpan.textContent = highlightSpan.getAttribute(`data-${currentLang}`);
+    }
+  });
+
+  // --- REVEAL ON SCROLL ---
+  const revealElements = document.querySelectorAll('.reveal, .reveal-delay');
+  
+  const revealOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, revealOptions);
+
+  revealElements.forEach(el => {
+    revealObserver.observe(el);
+  });
+
+  // --- NUMBER COUNTER ---
+  const counters = document.querySelectorAll('.counter');
+  let started = false;
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !started) {
+      started = true;
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 2000; // ms
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.textContent = Math.ceil(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target + "+";
+          }
+        };
+        updateCounter();
+      });
+    }
+  }, { threshold: 0.5 });
+  
+  const statsSection = document.querySelector('.stats-row');
+  if(statsSection) counterObserver.observe(statsSection);
+
+  // --- 3D TILT EFFECT ---
+  const tiltElements = document.querySelectorAll('.tilt-effect');
+  
+  tiltElements.forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const xTarget = ((x - rect.width / 2) / rect.width) * 20; // max 10 deg
+      const yTarget = ((y - rect.height / 2) / rect.height) * -20;
+      
+      el.style.transform = `perspective(1000px) rotateX(${yTarget}deg) rotateY(${xTarget}deg) scale3d(1.02, 1.02, 1.02)`;
+      el.style.transition = 'none';
+      el.style.zIndex = 10;
+    });
+    
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      el.style.transition = 'transform 0.5s ease';
+      el.style.zIndex = 1;
+    });
+  });
+
+  // --- BEFORE/AFTER SLIDERS ---
+  const baContainers = document.querySelectorAll('.ba-container');
+  
+  baContainers.forEach(container => {
+    const slider = container.querySelector('.ba-slider');
+    const afterImg = container.querySelector('.ba-after');
+    let isDragging = false;
+    
+    const moveSlider = (e) => {
+      if (!isDragging) return;
+      
+      const rect = container.getBoundingClientRect();
+      let x = (e.type.includes('mouse')) ? e.pageX - rect.left : e.touches[0].clientX - rect.left;
+      
+      // Ensure within bounds
+      x = Math.max(0, Math.min(x, rect.width));
+      
+      const percentage = (x / rect.width) * 100;
+      
+      slider.style.left = `${percentage}%`;
+      
+      if (document.documentElement.dir === 'rtl') {
+         afterImg.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+      } else {
+         afterImg.style.clipPath = `inset(0 0 0 ${percentage}%)`;
+      }
+    };
+    
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      moveSlider(e);
+    });
+    
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+    
+    window.addEventListener('mousemove', moveSlider);
+    
+    // Touch support
+    container.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      moveSlider(e);
+    }, {passive: true});
+    
+    window.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+    
+    window.addEventListener('touchmove', moveSlider, {passive: true});
+  });
+
+  // --- FAQ ACCORDION ---
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all
+      faqItems.forEach(faq => {
+        faq.classList.remove('active');
+        faq.querySelector('.faq-answer').style.maxHeight = null;
+      });
+      
+      if (!isActive) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
   });
 });
