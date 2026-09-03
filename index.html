@@ -3,117 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmed Essa | Premium Online Coaching</title>
+  <title>Ahmed Essa | Online Coach</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="lang-ar">
 
-  <!-- Loader -->
-  <div id="loader">
-    <div class="spinner"></div>
-  </div>
-
-  <!-- Navbar -->
-  <nav id="navbar">
+  <!-- Floating Nav and Socials -->
+  <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <span class="logo-en">AHMED ESSA</span>
+        <span class="logo-en">AE</span>
       </div>
       <ul class="nav-links">
         <li><a href="#about" data-ar="عني" data-en="About">عني</a></li>
-        <li><a href="#results" data-ar="النتائج" data-en="Results">النتائج</a></li>
+        <li><a href="#results" data-ar="التحولات" data-en="Transformations">التحولات</a></li>
         <li><a href="#pricing" data-ar="الباقات" data-en="Packages">الباقات</a></li>
         <li><a href="#faq" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a></li>
       </ul>
       <div class="nav-actions">
-        <button id="lang-toggle" class="lang-btn">English</button>
-        <a href="https://wa.me/201020004091" target="_blank" class="btn-primary nav-cta">
-          <span data-ar="تواصل معي" data-en="Contact Me">تواصل معي</span>
+        <button id="lang-toggle" class="lang-btn">EN</button>
+        <a href="https://wa.me/201020004091" target="_blank" class="btn-nav">
+          <span data-ar="ابدأ رحلتك" data-en="Start Journey">ابدأ رحلتك</span>
         </a>
       </div>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#about" data-ar="عني" data-en="About">عني</a>
-    <a href="#results" data-ar="النتائج" data-en="Results">النتائج</a>
-    <a href="#pricing" data-ar="الباقات" data-en="Packages">الباقات</a>
-    <a href="#faq" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a>
+  <div class="social-sidebar">
+    <a href="#">IG</a>
+    <a href="#">TK</a>
+    <a href="#">YT</a>
+    <div class="scroll-text">SCROLL</div>
+  </div>
+
+  <div class="pagination-sidebar">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
   </div>
 
   <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="hero-bg">
-      <div class="glow-orb orb-1"></div>
-      <div class="glow-orb orb-2"></div>
+  <header id="hero" class="hero-section">
+    <!-- Background Effects -->
+    <div class="hero-bg-elements">
+      <div class="huge-bg-text">AE</div>
+      <div class="glowing-ring ring-1"></div>
+      <div class="glowing-ring ring-2"></div>
+      <!-- Floating glass shards (css shapes) -->
+      <div class="shard shard-1"></div>
+      <div class="shard shard-2"></div>
+      <div class="shard shard-3"></div>
+      <div class="shard shard-4"></div>
     </div>
-    <div class="container hero-container">
-      <div class="hero-content reveal">
-        <div class="badge" data-ar="مدرب شخصي أونلاين" data-en="Online Personal Trainer">مدرب شخصي أونلاين</div>
-        <h1 class="hero-title">
-          <span data-ar="حوّل جسمك مع" data-en="Transform Your Body With">حوّل جسمك مع</span><br>
-          <span class="highlight" data-ar="أحمد عيسى" data-en="Ahmed Essa">أحمد عيسى</span>
+
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h3 class="subtitle-en tracking-wide">ONLINE COACH</h3>
+        <h1 class="main-title">
+          <span class="silver-text">AHMED</span><br>
+          <span class="silver-text">ESSA</span>
         </h1>
-        <p class="hero-subtitle" data-ar="برامج تدريب وتغذية مخصصة بالكامل للوصول لأفضل نسخة منك، بدون حرمان وبمتابعة دقيقة." data-en="Fully customized training and nutrition programs to reach your best self, without starvation and with precise follow-up.">
-          برامج تدريب وتغذية مخصصة بالكامل للوصول لأفضل نسخة منك، بدون حرمان وبمتابعة دقيقة.
+        <p class="hero-desc">
+          <span data-ar="مش مجرد مدرب." data-en="Not just a coach.">مش مجرد مدرب.</span><br>
+          <strong class="blue-text" data-ar="أنا شريك رحلتك نحو أفضل نسخة منك." data-en="I am your partner to your best self.">أنا شريك رحلتك نحو أفضل نسخة منك.</strong>
         </p>
-        <div class="hero-buttons">
-          <a href="#pricing" class="btn-primary btn-large">
-            <span data-ar="ابدأ رحلتك الآن" data-en="Start Your Journey Now">ابدأ رحلتك الآن</span>
+        <div class="hero-btns">
+          <a href="#pricing" class="btn-glow">
+            <span class="icon">➔</span>
+            <span data-ar="ابدأ رحلتك الآن" data-en="Start Now">ابدأ رحلتك الآن</span>
           </a>
-          <a href="#results" class="btn-secondary btn-large">
-            <span data-ar="شاهد النتائج" data-en="View Results">شاهد النتائج</span>
+          <a href="#video" class="btn-play">
+            <span class="play-icon">▶</span>
+            <span data-ar="شاهد الفيديو" data-en="Watch Video">شاهد الفيديو</span>
           </a>
         </div>
       </div>
-      <div class="hero-image reveal-delay">
-        <div class="image-wrapper tilt-effect">
-          <img src="images/coach1.jpg" alt="Ahmed Essa">
-          <div class="glass-card floating-card">
-            <span class="icon">⭐</span>
-            <div>
-              <h4 data-ar="برامج مخصصة" data-en="Custom Programs">برامج مخصصة</h4>
-              <p data-ar="تدريب وتغذية 100%" data-en="100% Training & Nutrition">تدريب وتغذية 100%</p>
-            </div>
-          </div>
+
+      <div class="hero-visual">
+        <div class="coach-image-wrapper mask-fade">
+          <!-- Added brightness/contrast filter to make it pop against dark bg -->
+          <img src="images/coach1.jpg" alt="Ahmed Essa" class="coach-img">
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
   <!-- About Section -->
-  <section id="about" class="section">
+  <section id="about" class="about-section">
+    <!-- Background AE glow -->
+    <div class="bg-watermark left">AE</div>
+    
     <div class="container">
       <div class="about-grid">
-        <div class="about-image reveal tilt-effect">
-          <img src="images/coach2.jpg" alt="Ahmed Essa Coaching">
-        </div>
-        <div class="about-text reveal-delay">
-          <h2 class="section-title" data-ar="من هو أحمد عيسى؟" data-en="Who is Ahmed Essa?">من هو أحمد عيسى؟</h2>
-          <p class="lead-text" data-ar="أنا هنا عشان أختصر عليك الطريق." data-en="I am here to shortcut the path for you.">أنا هنا عشان أختصر عليك الطريق.</p>
-          <p class="body-text" data-ar="التدريب مش مجرد ورقة مكتوب فيها تمارين وأكل. التدريب هو أسلوب حياة، فهم لطبيعة جسمك، وتوجيه صح للوصول للهدف. برامجي بتعتمد على العلم، الوصول للفشل العضلي بطريقة صحيحة، وتغذية متوازنة تخليك تستمتع بيومك من غير ملل." data-en="Training isn't just a paper with exercises and food. It's a lifestyle, understanding your body, and proper guidance. My programs rely on science, reaching muscle failure correctly, and balanced nutrition so you enjoy your day without boredom.">
-            التدريب مش مجرد ورقة مكتوب فيها تمارين وأكل. التدريب هو أسلوب حياة، فهم لطبيعة جسمك، وتوجيه صح للوصول للهدف. برامجي بتعتمد على العلم، الوصول للفشل العضلي بطريقة صحيحة، وتغذية متوازنة تخليك تستمتع بيومك من غير ملل.
+        <div class="about-text">
+          <h4 class="subtitle-en tracking-wide">ABOUT ME</h4>
+          <h2 class="section-title">
+            <span data-ar="من الشغف." data-en="From Passion.">من الشغف.</span><br>
+            <span class="blue-text" data-ar="صنعت الاحتراف." data-en="I created professionalism.">صنعت الاحتراف.</span>
+          </h2>
+          <p class="about-desc" data-ar="اسمي أحمد عيسى، مدرب معتمد وخبير في التغذية والتدريب. أساعدك على تحقيق أهدافك من خلال خطط مخصصة تناسب جسمك، نمط حياتك، وطموحك. النتائج اللي أنت شايفها... ممكن تكون نتيجتك الجاية." data-en="My name is Ahmed Essa, certified coach and expert in nutrition and training. I help you achieve your goals through customized plans that suit your body, lifestyle, and ambition. The results you see... could be your next result.">
+            اسمي أحمد عيسى، مدرب معتمد وخبير في التغذية والتدريب. أساعدك على تحقيق أهدافك من خلال خطط مخصصة تناسب جسمك، نمط حياتك، وطموحك. النتائج اللي أنت شايفها... ممكن تكون نتيجتك الجاية.
           </p>
-          
-          <div class="stats-row">
-            <div class="stat-item">
-              <h3 class="counter" data-target="200">0</h3>
-              <p data-ar="عميل سابق" data-en="Past Clients">عميل سابق</p>
+          <a href="#results" class="btn-outline">
+            <span data-ar="تعرف على قصتي" data-en="Know my story">تعرف على قصتي</span>
+          </a>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card glass-panel tilt-element">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-info">
+              <h3 class="stat-number">+<span class="counter" data-target="550">0</span></h3>
+              <p data-ar="عميل حققوا نتائج مذهلة" data-en="Clients achieved amazing results">عميل حققوا نتائج مذهلة</p>
             </div>
-            <div class="stat-item">
-              <h3 class="counter" data-target="5">0</h3>
-              <p data-ar="سنوات خبرة" data-en="Years Experience">سنوات خبرة</p>
+          </div>
+          <div class="stat-card glass-panel tilt-element">
+            <div class="stat-icon">📈</div>
+            <div class="stat-info">
+              <h3 class="stat-number">+<span class="counter" data-target="5">0</span></h3>
+              <p data-ar="سنوات من الخبرة في تغيير الحياة" data-en="Years of experience changing lives">سنوات من الخبرة في تغيير الحياة</p>
             </div>
-            <div class="stat-item">
-              <h3>100%</h3>
-              <p data-ar="التزام واهتمام" data-en="Commitment & Care">التزام واهتمام</p>
+          </div>
+          <div class="stat-card glass-panel tilt-element">
+            <div class="stat-icon">🔥</div>
+            <div class="stat-info">
+              <h3 class="stat-number">+<span class="counter" data-target="10">0</span>K</h3>
+              <p data-ar="متابع على منصات التواصل" data-en="Followers on social media">متابع على منصات التواصل</p>
+            </div>
+          </div>
+          <div class="stat-card glass-panel tilt-element">
+            <div class="stat-icon">💯</div>
+            <div class="stat-info">
+              <h3 class="stat-number">+<span class="counter" data-target="99">0</span>%</h3>
+              <p data-ar="نسبة رضا العملاء عن النتائج" data-en="Client satisfaction rate">نسبة رضا العملاء عن النتائج</p>
             </div>
           </div>
         </div>
@@ -121,220 +146,252 @@
     </div>
   </section>
 
-  <!-- Results Section -->
-  <section id="results" class="section bg-darker">
+  <!-- Transformations -->
+  <section id="results" class="results-section">
     <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title" data-ar="قصص نجاح حقيقية" data-en="Real Success Stories">قصص نجاح حقيقية</h2>
-        <p class="section-subtitle" data-ar="نتائج تتحدث عن نفسها. التزامك هو السر." data-en="Results that speak for themselves. Your commitment is the key.">نتائج تتحدث عن نفسها. التزامك هو السر.</p>
+      <div class="section-header text-center">
+        <h4 class="subtitle-en tracking-wide">TRANSFORMATIONS</h4>
+        <h2 class="section-title">
+          <span class="blue-text" data-ar="النتائج" data-en="Results">النتائج</span> 
+          <span data-ar="تتكلم." data-en="Speak.">تتكلم.</span>
+        </h2>
       </div>
 
-      <div class="results-gallery">
-        <!-- Result 1 -->
-        <div class="result-card reveal tilt-effect">
-          <div class="ba-container" id="ba1">
+      <div class="transformations-carousel">
+        
+        <!-- Transformation 1 -->
+        <div class="transform-card glass-panel tilt-element">
+          <div class="ba-container">
             <div class="ba-before">
               <img src="images/before1.jpg" alt="Before">
-              <span class="label-before" data-ar="قبل" data-en="Before">قبل</span>
+              <span class="tag tag-before" data-ar="قبل" data-en="Before">قبل</span>
             </div>
             <div class="ba-after">
               <img src="images/after1.jpg" alt="After">
-              <span class="label-after" data-ar="بعد" data-en="After">بعد</span>
+              <span class="tag tag-after" data-ar="بعد" data-en="After">بعد</span>
             </div>
-            <div class="ba-slider">
-              <div class="ba-handle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 9l-5 5 5 5M16 9l5 5-5 5"/></svg>
+            <div class="ba-slider-line">
+              <div class="ba-slider-btn">
+                <span><></span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Result 2 -->
-        <div class="result-card reveal-delay tilt-effect">
-          <div class="ba-container" id="ba2">
+        <!-- Transformation 2 -->
+        <div class="transform-card glass-panel tilt-element">
+          <div class="ba-container">
             <div class="ba-before">
               <img src="images/before2.jpg" alt="Before">
-              <span class="label-before" data-ar="قبل" data-en="Before">قبل</span>
+              <span class="tag tag-before" data-ar="قبل" data-en="Before">قبل</span>
             </div>
             <div class="ba-after">
               <img src="images/after2.jpg" alt="After">
-              <span class="label-after" data-ar="بعد" data-en="After">بعد</span>
+              <span class="tag tag-after" data-ar="بعد" data-en="After">بعد</span>
             </div>
-            <div class="ba-slider">
-              <div class="ba-handle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 9l-5 5 5 5M16 9l5 5-5 5"/></svg>
+            <div class="ba-slider-line">
+              <div class="ba-slider-btn">
+                <span><></span>
               </div>
             </div>
           </div>
+        </div>
+
+      </div>
+      
+      <div class="text-center mt-40">
+        <a href="https://wa.me/201020004091" class="btn-outline">
+          <span class="icon">➔</span>
+          <span data-ar="عرض المزيد من التحولات" data-en="View more transformations">عرض المزيد من التحولات</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Banner -->
+  <section class="features-section">
+    <div class="features-bg-image">
+      <img src="images/coach3.jpg" alt="Background">
+      <div class="features-overlay"></div>
+    </div>
+    
+    <div class="container features-content">
+      <div class="features-header text-right">
+        <h2 class="section-title">
+          <span data-ar="مش وزن بس." data-en="Not just weight.">مش وزن بس.</span><br>
+          <span class="blue-text" data-ar="ده أسلوب حياة." data-en="It's a lifestyle.">ده أسلوب حياة.</span>
+        </h2>
+      </div>
+
+      <div class="features-row">
+        <div class="feature-item">
+          <div class="feature-icon">🎯</div>
+          <p data-ar="خطط مخصصة 100%" data-en="100% Custom Plans">خطط مخصصة 100%</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🥗</div>
+          <p data-ar="تغذية مرنة مستدامة" data-en="Sustainable Flexible Nutrition">تغذية مرنة مستدامة</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💪</div>
+          <p data-ar="تدريب ذكي ومقنن" data-en="Smart & Tracked Training">تدريب ذكي ومقنن</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🧠</div>
+          <p data-ar="دعم ذهني وتطوير دائم" data-en="Mental Support & Growth">دعم ذهني وتطوير دائم</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📊</div>
+          <p data-ar="متابعة وقياس نتائج مستمرة" data-en="Continuous Results Tracking">متابعة وقياس نتائج مستمرة</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Pricing Section -->
-  <section id="pricing" class="section">
+  <section id="pricing" class="pricing-section">
+    <div class="bg-watermark right">AE</div>
+    
     <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title" data-ar="اختر باقتك" data-en="Choose Your Package">اختر باقتك</h2>
-        <p class="section-subtitle" data-ar="باقات مرنة تناسب هدفك وميزانيتك." data-en="Flexible packages that fit your goals and budget.">باقات مرنة تناسب هدفك وميزانيتك.</p>
+      <div class="pricing-header">
+        <div class="pricing-title-area">
+          <h4 class="subtitle-en tracking-wide">PACKAGES</h4>
+          <h2 class="section-title">
+            <span data-ar="اختر الباقة اللي" data-en="Choose the package that">اختر الباقة اللي</span><br>
+            <span class="blue-text" data-ar="تناسب هدفك." data-en="fits your goal.">تناسب هدفك.</span>
+          </h2>
+        </div>
+        <div class="pricing-nav">
+          <a href="#faq" class="btn-outline btn-small">
+            <span class="icon">➔</span>
+            <span data-ar="مقارنة الباقات" data-en="Compare Packages">مقارنة الباقات</span>
+          </a>
+        </div>
       </div>
 
       <div class="pricing-grid">
+        
         <!-- Starter -->
-        <div class="pricing-card glass-panel reveal tilt-effect">
-          <div class="card-header">
-            <h3 data-ar="الباقة الأساسية" data-en="Starter Plan">الباقة الأساسية</h3>
-            <p data-ar="شهر واحد" data-en="1 Month">شهر واحد</p>
-          </div>
-          <div class="card-price">
-            <span class="currency">EGP</span>
-            <span class="amount">350</span>
-          </div>
-          <ul class="features-list">
-            <li><span class="check">✓</span> <span data-ar="نظام غذائي محسوب السعرات" data-en="Calorie-calculated diet plan">نظام غذائي محسوب السعرات</span></li>
-            <li><span class="check">✓</span> <span data-ar="برنامج تدريبي مخصص" data-en="Customized training program">برنامج تدريبي مخصص</span></li>
-            <li><span class="check">✓</span> <span data-ar="شرح أداء التمارين والفشل العضلي" data-en="Exercise & muscle failure guide">شرح أداء التمارين والفشل العضلي</span></li>
-            <li class="disabled"><span class="cross">×</span> <span data-ar="متابعة أسبوعية وتعديل النظام" data-en="Weekly follow-up & adjustments">متابعة أسبوعية وتعديل النظام</span></li>
-            <li class="disabled"><span class="cross">×</span> <span data-ar="مكالمات فيديو للمتابعة" data-en="Video call check-ins">مكالمات فيديو للمتابعة</span></li>
+        <div class="price-card glass-panel tilt-element">
+          <div class="card-glow"></div>
+          <h3 class="plan-name">STARTER</h3>
+          <p class="plan-desc" data-ar="بداية رحلتك نحو نسخة أفضل منك" data-en="Start your journey to a better you">بداية رحلتك نحو نسخة أفضل منك</p>
+          
+          <ul class="plan-features">
+            <li><span class="check">✓</span> <span data-ar="خطة تدريب أساسية" data-en="Basic Training Plan">خطة تدريب أساسية</span></li>
+            <li><span class="check">✓</span> <span data-ar="نظام غذائي محسوب" data-en="Calculated Diet Plan">نظام غذائي محسوب</span></li>
+            <li><span class="check">✓</span> <span data-ar="دعم عبر واتساب" data-en="WhatsApp Support">دعم عبر واتساب</span></li>
+            <li class="muted"><span class="check">×</span> <span data-ar="متابعة أسبوعية" data-en="Weekly Follow-up">متابعة أسبوعية</span></li>
           </ul>
-          <a href="https://wa.me/201020004091?text=مرحباً، أريد الاشتراك في الباقة الأساسية (شهر واحد)" target="_blank" class="btn-outline card-btn">
-            <span data-ar="اشترك الآن" data-en="Subscribe Now">اشترك الآن</span>
+          
+          <div class="plan-price">
+            <span class="amount">350</span>
+            <span class="currency">EGP</span>
+          </div>
+          
+          <a href="https://wa.me/201020004091" class="btn-outline full-width">
+            <span data-ar="اختر الباقة" data-en="Choose Package">اختر الباقة</span>
           </a>
         </div>
 
-        <!-- Pro (Popular) -->
-        <div class="pricing-card glass-panel popular reveal-delay tilt-effect">
-          <div class="popular-badge" data-ar="الأكثر طلباً" data-en="Most Popular">الأكثر طلباً</div>
-          <div class="card-header">
-            <h3 class="highlight-text" data-ar="الباقة المتقدمة" data-en="Pro Plan">الباقة المتقدمة</h3>
-            <p data-ar="شهرين" data-en="2 Months">شهرين</p>
-          </div>
-          <div class="card-price highlight-text">
-            <span class="currency">EGP</span>
-            <span class="amount">600</span>
-          </div>
-          <ul class="features-list">
-            <li><span class="check">✓</span> <span data-ar="جميع ميزات الباقة الأساسية" data-en="All Starter Plan features">جميع ميزات الباقة الأساسية</span></li>
-            <li><span class="check">✓</span> <span data-ar="متابعة دورية كل أسبوع" data-en="Weekly progress follow-up">متابعة دورية كل أسبوع</span></li>
-            <li><span class="check">✓</span> <span data-ar="تعديل النظام بناءً على التطور" data-en="Plan adjustments based on progress">تعديل النظام بناءً على التطور</span></li>
-            <li><span class="check">✓</span> <span data-ar="الرد على الاستفسارات عبر واتساب" data-en="WhatsApp Q&A support">الرد على الاستفسارات عبر واتساب</span></li>
-            <li class="disabled"><span class="cross">×</span> <span data-ar="مكالمات فيديو في أي وقت" data-en="Video calls anytime">مكالمات فيديو في أي وقت</span></li>
+        <!-- Pro (Highlight) -->
+        <div class="price-card glass-panel popular tilt-element">
+          <div class="popular-tag" data-ar="الأكثر طلباً" data-en="Most Popular">الأكثر طلباً</div>
+          <div class="card-glow intense"></div>
+          <div class="plan-icon">💎</div>
+          <h3 class="plan-name blue-text">PRO</h3>
+          <p class="plan-desc" data-ar="لمن يريد نتائج قوية وتغيير حقيقي" data-en="For real change and strong results">لمن يريد نتائج قوية وتغيير حقيقي</p>
+          
+          <ul class="plan-features">
+            <li><span class="check blue-text">✓</span> <span data-ar="خطة تدريب متقدمة" data-en="Advanced Training Plan">خطة تدريب متقدمة</span></li>
+            <li><span class="check blue-text">✓</span> <span data-ar="نظام غذائي مخصص" data-en="Custom Diet Plan">نظام غذائي مخصص</span></li>
+            <li><span class="check blue-text">✓</span> <span data-ar="متابعة دورية وتعديلات" data-en="Regular Follow-up & Adjustments">متابعة دورية وتعديلات</span></li>
+            <li><span class="check blue-text">✓</span> <span data-ar="تحليلات أسبوعية للنتائج" data-en="Weekly Results Analytics">تحليلات أسبوعية للنتائج</span></li>
           </ul>
-          <a href="https://wa.me/201020004091?text=مرحباً، أريد الاشتراك في الباقة المتقدمة (شهرين)" target="_blank" class="btn-primary card-btn glow-btn">
-            <span data-ar="اشترك الآن" data-en="Subscribe Now">اشترك الآن</span>
+          
+          <div class="plan-price">
+            <span class="amount">600</span>
+            <span class="currency">EGP</span>
+          </div>
+          
+          <a href="https://wa.me/201020004091" class="btn-glow full-width">
+            <span data-ar="اختر الباقة" data-en="Choose Package">اختر الباقة</span>
           </a>
         </div>
 
         <!-- Elite -->
-        <div class="pricing-card glass-panel reveal tilt-effect">
-          <div class="card-header">
-            <h3 data-ar="باقة النخبة" data-en="Elite Plan">باقة النخبة</h3>
-            <p data-ar="٣ شهور" data-en="3 Months">٣ شهور</p>
-          </div>
-          <div class="card-price">
-            <span class="currency">EGP</span>
-            <span class="amount">950</span>
-          </div>
-          <ul class="features-list">
-            <li><span class="check">✓</span> <span data-ar="جميع ميزات الباقة المتقدمة" data-en="All Pro Plan features">جميع ميزات الباقة المتقدمة</span></li>
-            <li><span class="check">✓</span> <span data-ar="متابعة يومية مستمرة" data-en="Continuous daily follow-up">متابعة يومية مستمرة</span></li>
-            <li><span class="check">✓</span> <span data-ar="مكالمات فيديو للمتابعة الدقيقة" data-en="Video calls for precise check-ins">مكالمات فيديو للمتابعة الدقيقة</span></li>
-            <li><span class="check">✓</span> <span data-ar="أولوية في الرد وتعديل سريع" data-en="Priority response & fast updates">أولوية في الرد وتعديل سريع</span></li>
-            <li><span class="check">✓</span> <span data-ar="دعم تحفيزي مستمر" data-en="Continuous motivational support">دعم تحفيزي مستمر</span></li>
+        <div class="price-card glass-panel tilt-element">
+          <div class="card-glow"></div>
+          <div class="plan-icon">👑</div>
+          <h3 class="plan-name">ELITE</h3>
+          <p class="plan-desc" data-ar="لتحقيق أقصى مستوى من الأداء" data-en="To achieve maximum performance">لتحقيق أقصى مستوى من الأداء</p>
+          
+          <ul class="plan-features">
+            <li><span class="check">✓</span> <span data-ar="خطة تدريب احترافية" data-en="Professional Training Plan">خطة تدريب احترافية</span></li>
+            <li><span class="check">✓</span> <span data-ar="نظام غذائي احترافي" data-en="Professional Diet Plan">نظام غذائي احترافي</span></li>
+            <li><span class="check">✓</span> <span data-ar="متابعة يومية دقيقة" data-en="Precise Daily Follow-up">متابعة يومية دقيقة</span></li>
+            <li><span class="check">✓</span> <span data-ar="دعم مباشر 24/7 ومكالمات" data-en="24/7 Direct Support & Calls">دعم مباشر 24/7 ومكالمات</span></li>
           </ul>
-          <a href="https://wa.me/201020004091?text=مرحباً، أريد الاشتراك في باقة النخبة (٣ شهور)" target="_blank" class="btn-outline card-btn">
-            <span data-ar="اشترك الآن" data-en="Subscribe Now">اشترك الآن</span>
+          
+          <div class="plan-price">
+            <span class="amount">950</span>
+            <span class="currency">EGP</span>
+          </div>
+          
+          <a href="https://wa.me/201020004091" class="btn-outline full-width">
+            <span data-ar="اختر الباقة" data-en="Choose Package">اختر الباقة</span>
           </a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- How It Works Section -->
-  <section class="section bg-darker">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title" data-ar="كيف نبدأ؟" data-en="How To Start?">كيف نبدأ؟</h2>
-      </div>
-      <div class="steps-grid">
-        <div class="step-card reveal">
-          <div class="step-number">1</div>
-          <h4 data-ar="اختر الباقة" data-en="Choose Plan">اختر الباقة</h4>
-          <p data-ar="حدد الباقة التي تناسب هدفك من القائمة أعلاه." data-en="Select the package that fits your goal from the list above.">حدد الباقة التي تناسب هدفك من القائمة أعلاه.</p>
-        </div>
-        <div class="step-card reveal-delay">
-          <div class="step-number">2</div>
-          <h4 data-ar="أرسل بياناتك" data-en="Send Details">أرسل بياناتك</h4>
-          <p data-ar="تواصل معي على واتساب وسأطلب منك بياناتك (الوزن، الطول، الهدف)." data-en="Contact me on WhatsApp and I'll ask for your details (weight, height, goal).">تواصل معي على واتساب وسأطلب منك بياناتك (الوزن، الطول، الهدف).</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">3</div>
-          <h4 data-ar="استلم برنامجك" data-en="Get Your Program">استلم برنامجك</h4>
-          <p data-ar="خلال فترة قصيرة، سأقوم بتجهيز برنامجك المخصص بالكامل لتبدأ فوراً." data-en="Within a short time, I will prepare your fully customized program to start immediately.">خلال فترة قصيرة، سأقوم بتجهيز برنامجك المخصص بالكامل لتبدأ فوراً.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title" data-ar="الأسئلة الشائعة" data-en="Common Questions">الأسئلة الشائعة</h2>
-      </div>
-      <div class="faq-container reveal">
-        <div class="faq-item">
-          <button class="faq-question">
-            <span data-ar="هل يجب أن أتدرب في الجيم؟" data-en="Do I have to train in a gym?">هل يجب أن أتدرب في الجيم؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p data-ar="ليس شرطاً. يمكنني تصميم برنامج تدريبي يناسب الأدوات المتاحة لديك في المنزل أو بدون أدوات نهائياً." data-en="Not necessarily. I can design a training program that suits the equipment you have at home or even without any equipment.">ليس شرطاً. يمكنني تصميم برنامج تدريبي يناسب الأدوات المتاحة لديك في المنزل أو بدون أدوات نهائياً.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            <span data-ar="هل النظام الغذائي يعتمد على الحرمان؟" data-en="Does the diet rely on starvation?">هل النظام الغذائي يعتمد على الحرمان؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p data-ar="إطلاقاً. النظام مصمم ليكون مرناً ومناسباً لأسلوب حياتك والأطعمة التي تفضلها، مع ضمان تحقيق هدفك سواء كان زيادة عضلية أو خسارة دهون." data-en="Absolutely not. The system is designed to be flexible and suited to your lifestyle and the foods you prefer, while ensuring you achieve your goal, whether it's muscle gain or fat loss.">إطلاقاً. النظام مصمم ليكون مرناً ومناسباً لأسلوب حياتك والأطعمة التي تفضلها، مع ضمان تحقيق هدفك سواء كان زيادة عضلية أو خسارة دهون.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            <span data-ar="متى سأبدأ في رؤية النتائج؟" data-en="When will I start seeing results?">متى سأبدأ في رؤية النتائج؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p data-ar="تختلف الاستجابة من شخص لآخر، لكن مع الالتزام التام بالنظام التدريبي والغذائي، ستلاحظ تغييرات إيجابية واضحة خلال الأسابيع الأولى." data-en="Response varies from person to person, but with full commitment to the training and nutrition system, you will notice clear positive changes within the first few weeks.">تختلف الاستجابة من شخص لآخر، لكن مع الالتزام التام بالنظام التدريبي والغذائي، ستلاحظ تغييرات إيجابية واضحة خلال الأسابيع الأولى.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container text-center reveal">
-      <h2 data-ar="جاهز للتغيير الحقيقي؟" data-en="Ready for real change?">جاهز للتغيير الحقيقي؟</h2>
-      <p data-ar="لا تؤجل هدفك. تواصل معي الآن لنبدأ العمل على أفضل نسخة منك." data-en="Don't delay your goal. Contact me now to start working on your best version.">لا تؤجل هدفك. تواصل معي الآن لنبدأ العمل على أفضل نسخة منك.</p>
-      <a href="https://wa.me/201020004091" target="_blank" class="btn-primary btn-large glow-btn mt-20">
-        <span data-ar="تواصل عبر واتساب" data-en="Contact via WhatsApp">تواصل عبر واتساب</span>
+  <section class="final-cta">
+    <div class="cta-bg-image">
+      <img src="images/coach2.jpg" alt="CTA Background">
+      <div class="cta-overlay"></div>
+    </div>
+    
+    <div class="container text-center cta-content">
+      <h2 class="section-title">
+        <span data-ar="جاهز تبدأ" data-en="Ready to start">جاهز تبدأ</span>
+        <span class="blue-text" data-ar="التغيير؟" data-en="The Change?">التغيير؟</span>
+      </h2>
+      <p class="cta-subtitle" data-ar="أول خطوة هي القرار. والباقي... نعمله مع بعض." data-en="The first step is the decision. The rest... we do together.">
+        أول خطوة هي القرار. والباقي... نعمله مع بعض.
+      </p>
+      
+      <a href="https://wa.me/201020004091" class="btn-glow btn-large mt-40">
+        <span class="icon">➔</span>
+        <span data-ar="ابدأ رحلتك الآن" data-en="Start your journey now">ابدأ رحلتك الآن</span>
       </a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-logo">AHMED ESSA</div>
-      <div class="footer-contact">
-        <!-- Added dir="ltr" to fix the number display issue -->
-        <span dir="ltr" class="phone-number">+20 10 20004091</span>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-en blue-text">AE</span>
+        </div>
+        <div class="brand-text">
+          <span class="name-en">AHMED ESSA</span><br>
+          <span class="title-en text-muted">ONLINE COACH</span>
+        </div>
       </div>
-      <div class="footer-copyright" data-ar="جميع الحقوق محفوظة © 2025" data-en="All Rights Reserved © 2025">
-        جميع الحقوق محفوظة © 2025
+      
+      <div class="footer-social">
+        <a href="#">IG</a>
+        <a href="#">TK</a>
+        <a href="#">YT</a>
+        <a href="https://wa.me/201020004091">WA</a>
+      </div>
+      
+      <div class="footer-copy text-muted">
+        <span dir="ltr">© 2024 Ahmed Essa. All Rights Reserved.</span>
       </div>
     </div>
   </footer>
