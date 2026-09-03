@@ -1,6 +1,87 @@
 'use strict';
 
+/* ====== PARTICLE CANVAS ====== */
+(function initParticles() {
+  const canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const COUNT = 60;
+  for (let i = 0; i < COUNT; i++) {
+    particles.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.5 + 0.4,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      alpha: Math.random() * 0.6 + 0.2
+    });
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(77,155,255,${p.alpha})`;
+      ctx.fill();
+    });
+    // Draw connecting lines
+    particles.forEach((a, i) => {
+      particles.slice(i + 1).forEach(b => {
+        const dist = Math.hypot(a.x - b.x, a.y - b.y);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(0,102,255,${0.12 * (1 - dist / 120)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      });
+    });
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
+})();
+
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  // --- SECTION REVEALS ---
+  const sections = document.querySelectorAll('section, header');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.08 });
+  sections.forEach(s => { s.classList.add('reveal-section'); sectionObserver.observe(s); });
+
+  // --- PAGINATION DOTS ---
+  const dots = document.querySelectorAll('.dot');
+  const sectionsArr = Array.from(sections);
+  const dotObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = sectionsArr.indexOf(entry.target);
+        if (idx >= 0 && idx < dots.length) {
+          dots.forEach(d => d.classList.remove('active'));
+          dots[Math.min(idx, dots.length - 1)].classList.add('active');
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+  sectionsArr.forEach(s => dotObserver.observe(s));
 
   // --- NAVBAR SCROLL ---
   const navbar = document.querySelector('.navbar');
