@@ -6,382 +6,290 @@
   <title>Ahmed Essa | Online Coach</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="lang-ar">
 
-  <!-- ========== NAVBAR ========== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="logo-link">
-        <div class="logo-badge"><span class="logo-ae">AE</span></div>
-      </a>
-      <div class="nav-links" id="navLinks">
-        <a href="#about"    data-ar="من أنا"    data-en="About">من أنا</a>
-        <a href="#results"  data-ar="التحولات"  data-en="Results">التحولات</a>
-        <a href="#features" data-ar="المنهج"    data-en="Method">المنهج</a>
-        <a href="#pricing"  data-ar="الباقات"   data-en="Packages">الباقات</a>
-      </div>
-      <div class="nav-actions">
-        <button class="lang-btn" id="lang-toggle">EN</button>
-        <a href="https://wa.me/201020004091" class="nav-cta-btn" data-ar="ابدأ الآن" data-en="Start Now">ابدأ الآن</a>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-wrap">
+      <a href="#" class="nav-logo">AE</a>
+      <ul class="nav-menu">
+        <li><a href="#about"   data-ar="من أنا"   data-en="About">من أنا</a></li>
+        <li><a href="#results" data-ar="النتائج"  data-en="Results">النتائج</a></li>
+        <li><a href="#method"  data-ar="المنهج"   data-en="Method">المنهج</a></li>
+        <li><a href="#pricing" data-ar="الباقات"  data-en="Packages">الباقات</a></li>
+      </ul>
+      <div class="nav-end">
+        <button class="lang-toggle" id="langBtn">EN</button>
+        <a href="https://wa.me/201020004091" class="nav-wa" data-ar="ابدأ" data-en="Start">ابدأ</a>
       </div>
     </div>
   </nav>
 
-  <!-- ========== HERO ========== -->
-  <header class="hero" id="home">
-    <canvas id="particles-canvas"></canvas>
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="snow"></canvas>
 
-    <!-- Ambient glows -->
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="hero-glow hero-glow-2"></div>
-    <div class="hero-glow hero-glow-3"></div>
-
-    <!-- Geometric grid lines -->
-    <div class="hero-grid-lines" aria-hidden="true">
-      <div class="gl gl-1"></div><div class="gl gl-2"></div>
-      <div class="gl gl-3"></div><div class="gl gl-4"></div>
+    <!-- full-bleed coach photo on the side -->
+    <div class="hero-photo">
+      <img src="images/coach1.jpg" alt="Ahmed Essa"
+           fetchpriority="high" loading="eager" decoding="async">
+      <div class="hero-photo-fade"></div>
     </div>
 
-    <!-- Giant watermark -->
-    <div class="hero-watermark" aria-hidden="true">AE</div>
+    <!-- text over the dark side -->
+    <div class="hero-content">
+      <span class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span data-ar="مدرب لياقة أونلاين معتمد" data-en="Certified Online Fitness Coach">مدرب لياقة أونلاين معتمد</span>
+      </span>
 
-    <div class="hero-layout">
-      <!-- Text side -->
-      <div class="hero-text">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span data-ar="متاح للتسجيل الآن" data-en="Now Accepting Clients">متاح للتسجيل الآن</span>
+      <h1 class="hero-name" dir="ltr">
+        <span class="name-line n1">AHMED</span>
+        <span class="name-line n2">ESSA</span>
+      </h1>
+
+      <p class="hero-quote" data-ar="مش بنبيع حلم. بنبني جسم." data-en="We don't sell dreams. We build bodies.">
+        مش بنبيع حلم. بنبني جسم.
+      </p>
+
+      <a href="https://wa.me/201020004091" class="hero-cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-ar="ابدأ رحلتك الآن" data-en="Start Your Journey">ابدأ رحلتك الآن</span>
+      </a>
+
+      <div class="hero-numbers">
+        <div class="hn-item">
+          <strong>550+</strong>
+          <span data-ar="عميل" data-en="Clients">عميل</span>
         </div>
-
-        <div class="hero-name-block" dir="ltr">
-          <div class="hero-name-line hn-ahmed">AHMED</div>
-          <div class="hero-name-line hn-essa">ESSA</div>
+        <div class="hn-sep"></div>
+        <div class="hn-item">
+          <strong>7+</strong>
+          <span data-ar="سنوات" data-en="Years">سنوات</span>
         </div>
-
-        <div class="hero-role-line">
-          <span class="role-bar"></span>
-          <span class="role-text" data-ar="مدرب أونلاين معتمد" data-en="Certified Online Coach">مدرب أونلاين معتمد</span>
-          <span class="role-bar"></span>
+        <div class="hn-sep"></div>
+        <div class="hn-item">
+          <strong>92%</strong>
+          <span data-ar="رضا" data-en="Rated">رضا</span>
         </div>
+      </div>
+    </div>
 
-        <p class="hero-desc"
-           data-ar="مش بنبيعلك حلم. بنبنيلك جسم وعقل يفضل معاك طول عمرك."
-           data-en="We don't sell dreams. We build a body and mindset that lasts a lifetime.">
-          مش بنبيعلك حلم. بنبنيلك جسم وعقل يفضل معاك طول عمرك.
+    <!-- scroll cue -->
+    <div class="scroll-cue">
+      <div class="sc-line"></div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span>+550 CLIENT ·</span><span data-ar="نتائج حقيقية" data-en="REAL RESULTS">نتائج حقيقية</span>
+      <span>· 7+ YEARS ·</span><span data-ar="خبرة مثبتة" data-en="PROVEN EXPERIENCE">خبرة مثبتة</span>
+      <span>· 92% ·</span><span data-ar="نسبة رضا العملاء" data-en="SATISFACTION RATE">نسبة رضا العملاء</span>
+      <span>· +35K ·</span><span data-ar="متابع أونلاين" data-en="ONLINE FOLLOWERS">متابع أونلاين</span>
+      <span>· +550 CLIENT ·</span><span data-ar="نتائج حقيقية" data-en="REAL RESULTS">نتائج حقيقية</span>
+      <span>· 7+ YEARS ·</span><span data-ar="خبرة مثبتة" data-en="PROVEN EXPERIENCE">خبرة مثبتة</span>
+      <span>· 92% ·</span><span data-ar="نسبة رضا العملاء" data-en="SATISFACTION RATE">نسبة رضا العملاء</span>
+      <span>· +35K ·</span><span data-ar="متابع أونلاين" data-en="ONLINE FOLLOWERS">متابع أونلاين</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-img reveal">
+        <img src="images/coach1.jpg" alt="Ahmed Essa" loading="lazy">
+        <div class="about-img-accent"></div>
+        <div class="about-years-badge">
+          <span class="ayb-num">7+</span>
+          <span class="ayb-txt" data-ar="سنوات" data-en="Years">سنوات</span>
+        </div>
+      </div>
+
+      <div class="about-copy reveal">
+        <p class="section-eyebrow" data-ar="من أنا" data-en="ABOUT ME">من أنا</p>
+        <h2 class="section-h2">
+          <span data-ar="رحلتي بدأت" data-en="My journey started">رحلتي بدأت</span><br>
+          <em data-ar="بقرار واحد." data-en="with one decision.">بقرار واحد.</em>
+        </h2>
+        <p class="about-para"
+           data-ar="أنا أحمد عيسى، مدرب لياقة معتمد وخبير تغذية. ساعدت أكتر من 550 عميل يحققوا نتائج حقيقية — مش خطط جاهزة، كل حاجة بتتعمل خصيصاً ليك أنت وجسمك وهدفك."
+           data-en="I'm Ahmed Essa, certified fitness coach and nutrition expert. I've helped 550+ clients get real results — no generic plans. Everything is built specifically for your body and your goal.">
+          أنا أحمد عيسى، مدرب لياقة معتمد وخبير تغذية. ساعدت أكتر من 550 عميل يحققوا نتائج حقيقية — مش خطط جاهزة، كل حاجة بتتعمل خصيصاً ليك أنت وجسمك وهدفك.
         </p>
 
-        <div class="hero-actions">
-          <a href="https://wa.me/201020004091" class="cta-primary">
-            <span class="cta-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </span>
-            <span data-ar="ابدأ رحلتك الآن" data-en="Start Your Journey">ابدأ رحلتك الآن</span>
-          </a>
-          <a href="#results" class="cta-secondary">
-            <span data-ar="شوف النتائج" data-en="View Results">شوف النتائج</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
-          </a>
-        </div>
-
-        <div class="hero-mini-stats">
-          <div class="mini-stat">
-            <span class="mini-num">+550</span>
-            <span class="mini-label" data-ar="عميل" data-en="Clients">عميل</span>
+        <div class="about-stats">
+          <div class="as-item">
+            <strong>+<span class="counter" data-target="550">0</span></strong>
+            <span data-ar="عميل ناجح" data-en="Happy Clients">عميل ناجح</span>
           </div>
-          <div class="mini-div"></div>
-          <div class="mini-stat">
-            <span class="mini-num">7+</span>
-            <span class="mini-label" data-ar="سنين خبرة" data-en="Yrs Exp">سنين خبرة</span>
+          <div class="as-item">
+            <strong><span class="counter" data-target="35">0</span>K+</strong>
+            <span data-ar="متابع" data-en="Followers">متابع</span>
           </div>
-          <div class="mini-div"></div>
-          <div class="mini-stat">
-            <span class="mini-num">92%</span>
-            <span class="mini-label" data-ar="رضا العملاء" data-en="Satisfaction">رضا العملاء</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Coach image side -->
-      <div class="hero-visual">
-        <div class="coach-card">
-          <div class="coach-ring cr-1"></div>
-          <div class="coach-ring cr-2"></div>
-          <div class="coach-ring cr-3"></div>
-          <div class="coach-glow-bg"></div>
-          <img src="images/coach1.jpg" alt="Coach Ahmed Essa" class="coach-img"
-               fetchpriority="high" loading="eager" decoding="async">
-          <div class="coach-badge-top">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-            <span data-ar="مدرب معتمد" data-en="Certified Coach">مدرب معتمد</span>
-          </div>
-          <div class="coach-badge-bottom">
-            <div class="cbb-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-            </div>
-            <div>
-              <div class="cbb-num">-24 KG</div>
-              <div class="cbb-label" data-ar="أسرع تحول" data-en="Fastest Transform">أسرع تحول</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scroll-indicator">
-      <div class="scroll-track"><div class="scroll-thumb"></div></div>
-      <span>SCROLL</span>
-    </div>
-  </header>
-
-  <!-- ========== ABOUT ========== -->
-  <section class="about-section" id="about">
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="about-img-col reveal">
-          <div class="about-img-wrap">
-            <div class="about-img-glow"></div>
-            <img src="images/coach1.jpg" alt="Ahmed Essa" class="about-img" loading="lazy">
-            <div class="about-img-border"></div>
-            <div class="exp-badge">
-              <span class="exp-num">7+</span>
-              <span class="exp-label" data-ar="سنوات" data-en="Years">سنوات</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-content reveal">
-          <div class="tag-line">
-            <span class="tag-dot"></span>
-            <span data-ar="من أنا" data-en="ABOUT ME">من أنا</span>
-          </div>
-          <h2 class="section-title">
-            <span data-ar="رحلتي بدأت" data-en="My journey started">رحلتي بدأت</span><br>
-            <span class="text-ice" data-ar="بقرار واحد." data-en="with one decision.">بقرار واحد.</span>
-          </h2>
-          <p class="about-para"
-             data-ar="أنا أحمد عيسى، مدرب لياقة معتمد وخبير تغذية. ساعدت أكتر من 550 عميل يحققوا نتائج حقيقية. مش بنبيع خطط جاهزة — كل حاجة بتتعمل عشانك أنت وجسمك."
-             data-en="I'm Ahmed Essa, certified fitness coach and nutrition expert. I've helped 550+ clients achieve real results. We don't sell generic plans — everything is built for you and your body.">
-            أنا أحمد عيسى، مدرب لياقة معتمد وخبير تغذية. ساعدت أكتر من 550 عميل يحققوا نتائج حقيقية. مش بنبيع خطط جاهزة — كل حاجة بتتعمل عشانك أنت وجسمك.
-          </p>
-
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-              </div>
-              <div class="stat-num-wrap">+<span class="counter" data-target="550">0</span></div>
-              <div class="stat-lbl" data-ar="عميل ناجح" data-en="Happy Clients">عميل ناجح</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-              </div>
-              <div class="stat-num-wrap"><span class="counter" data-target="7">0</span>+</div>
-              <div class="stat-lbl" data-ar="سنوات خبرة" data-en="Years Exp">سنوات خبرة</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              </div>
-              <div class="stat-num-wrap">+<span class="counter" data-target="35">0</span>K</div>
-              <div class="stat-lbl" data-ar="متابع" data-en="Followers">متابع</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <div class="stat-num-wrap"><span class="counter" data-target="92">0</span>%</div>
-              <div class="stat-lbl" data-ar="نسبة رضا" data-en="Satisfaction">نسبة رضا</div>
-            </div>
+          <div class="as-item">
+            <strong><span class="counter" data-target="92">0</span>%</strong>
+            <span data-ar="رضا العملاء" data-en="Satisfaction">رضا العملاء</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== RESULTS ========== -->
-  <section class="results-section" id="results">
-    <div class="results-bg-glow"></div>
-    <div class="wrap">
-      <div class="section-intro text-center reveal">
-        <div class="tag-line centered">
-          <span class="tag-dot"></span>
-          <span data-ar="TRANSFORMATIONS" data-en="TRANSFORMATIONS">TRANSFORMATIONS</span>
-          <span class="tag-dot"></span>
-        </div>
-        <h2 class="section-title">
+  <!-- RESULTS -->
+  <section class="results" id="results">
+    <div class="results-wrap">
+      <div class="section-head text-center reveal">
+        <p class="section-eyebrow" data-ar="التحولات" data-en="TRANSFORMATIONS">التحولات</p>
+        <h2 class="section-h2">
           <span data-ar="النتائج" data-en="Results">النتائج</span>
-          <span class="text-ice" data-ar=" بتتكلم عن نفسها." data-en=" speak for themselves."> بتتكلم عن نفسها.</span>
+          <em data-ar=" بتتكلم." data-en=" speak."> بتتكلم.</em>
         </h2>
       </div>
 
-      <div class="ba-track reveal">
-        <div class="ba-card">
-          <div class="ba-label-row">
-            <span class="ba-tag" data-ar="قبل" data-en="Before">قبل</span>
-            <div class="ba-result-badge">-24 KG</div>
-            <span class="ba-tag" data-ar="بعد" data-en="After">بعد</span>
+      <div class="ba-row reveal">
+        <div class="ba-box">
+          <div class="ba-chip">−24 KG</div>
+          <div class="ba-slider" data-dir="rtl">
+            <div class="ba-b"><img src="images/before1.jpg" alt="Before" loading="lazy"></div>
+            <div class="ba-a"><img src="images/after1.jpg"  alt="After"  loading="lazy"></div>
+            <div class="ba-line"><div class="ba-knob"></div></div>
           </div>
-          <div class="ba-slider-wrap" data-dir="rtl">
-            <div class="ba-before"><img src="images/before1.jpg" alt="Before" loading="lazy"></div>
-            <div class="ba-after"><img src="images/after1.jpg" alt="After" loading="lazy"></div>
-            <div class="ba-handle"><div class="ba-handle-inner"></div></div>
+          <div class="ba-labels">
+            <span data-ar="قبل" data-en="Before">قبل</span>
+            <span data-ar="بعد" data-en="After">بعد</span>
           </div>
         </div>
-        <div class="ba-card">
-          <div class="ba-label-row">
-            <span class="ba-tag" data-ar="قبل" data-en="Before">قبل</span>
-            <div class="ba-result-badge">-18 KG</div>
-            <span class="ba-tag" data-ar="بعد" data-en="After">بعد</span>
+        <div class="ba-box">
+          <div class="ba-chip">−18 KG</div>
+          <div class="ba-slider" data-dir="rtl">
+            <div class="ba-b"><img src="images/before2.jpg" alt="Before" loading="lazy"></div>
+            <div class="ba-a"><img src="images/after2.jpg"  alt="After"  loading="lazy"></div>
+            <div class="ba-line"><div class="ba-knob"></div></div>
           </div>
-          <div class="ba-slider-wrap" data-dir="rtl">
-            <div class="ba-before"><img src="images/before2.jpg" alt="Before" loading="lazy"></div>
-            <div class="ba-after"><img src="images/after2.jpg" alt="After" loading="lazy"></div>
-            <div class="ba-handle"><div class="ba-handle-inner"></div></div>
+          <div class="ba-labels">
+            <span data-ar="قبل" data-en="Before">قبل</span>
+            <span data-ar="بعد" data-en="After">بعد</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== METHOD ========== -->
-  <section class="method-section" id="features">
-    <div class="method-bg">
+  <!-- METHOD -->
+  <section class="method" id="method">
+    <div class="method-bg-img">
       <img src="images/coach3.jpg" alt="" aria-hidden="true" loading="lazy">
-      <div class="method-overlay"></div>
+      <div class="method-dim"></div>
     </div>
-    <div class="wrap">
-      <div class="section-intro reveal">
-        <div class="tag-line">
-          <span class="tag-dot"></span>
-          <span data-ar="المنهج" data-en="THE METHOD">المنهج</span>
-        </div>
-        <h2 class="section-title">
+    <div class="method-wrap">
+      <div class="section-head reveal">
+        <p class="section-eyebrow" data-ar="المنهج" data-en="THE METHOD">المنهج</p>
+        <h2 class="section-h2">
           <span data-ar="مش وزن بس." data-en="Not just weight.">مش وزن بس.</span><br>
-          <span class="text-ice" data-ar="ده أسلوب حياة." data-en="It's a lifestyle.">ده أسلوب حياة.</span>
+          <em data-ar="أسلوب حياة." data-en="A lifestyle.">أسلوب حياة.</em>
         </h2>
       </div>
-      <div class="method-grid reveal">
-        <div class="method-card">
-          <div class="method-num">01</div>
-          <div class="method-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+      <div class="method-list reveal">
+        <div class="ml-item">
+          <span class="ml-n">01</span>
+          <div>
+            <h3 data-ar="خطة مخصصة 100%" data-en="100% Custom Plan">خطة مخصصة 100%</h3>
+            <p data-ar="مفيش حاجة جاهزة. كل حاجة بتتبني على أساس جسمك وهدفك بالظبط." data-en="Nothing is generic. Everything built around your exact body and goal.">مفيش حاجة جاهزة. كل حاجة بتتبني على أساس جسمك وهدفك بالظبط.</p>
           </div>
-          <h3 data-ar="خطة مخصصة 100%" data-en="100% Custom Plan">خطة مخصصة 100%</h3>
-          <p data-ar="مفيش خطة عامة. كل حاجة بتتعمل على أساس جسمك وهدفك." data-en="No generic plans. Everything built around your body and your goal.">مفيش خطة عامة. كل حاجة بتتعمل على أساس جسمك وهدفك.</p>
         </div>
-        <div class="method-card">
-          <div class="method-num">02</div>
-          <div class="method-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+        <div class="ml-item">
+          <span class="ml-n">02</span>
+          <div>
+            <h3 data-ar="تغذية مرنة" data-en="Flexible Nutrition">تغذية مرنة</h3>
+            <p data-ar="نظام بيتناسب مع حياتك — مش العكس. استمرارية بدون حرمان." data-en="A system that fits your life — not the other way around. Sustainable.">نظام بيتناسب مع حياتك — مش العكس. استمرارية بدون حرمان.</p>
           </div>
-          <h3 data-ar="تغذية مرنة" data-en="Flexible Nutrition">تغذية مرنة</h3>
-          <p data-ar="نظام يتناسب مع حياتك، مش العكس. استمرارية بدون حرمان." data-en="A diet that fits your life. Sustainable, not restrictive.">نظام يتناسب مع حياتك، مش العكس. استمرارية بدون حرمان.</p>
         </div>
-        <div class="method-card">
-          <div class="method-num">03</div>
-          <div class="method-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        <div class="ml-item">
+          <span class="ml-n">03</span>
+          <div>
+            <h3 data-ar="تدريب ذكي" data-en="Smart Training">تدريب ذكي</h3>
+            <p data-ar="مش مجرد تعب — تدريب منظم ومحسوب يوصلك للنتيجة بأقل وقت." data-en="Not just hard work — structured, measured training for maximum results.">مش مجرد تعب — تدريب منظم ومحسوب يوصلك للنتيجة بأقل وقت.</p>
           </div>
-          <h3 data-ar="تدريب ذكي" data-en="Smart Training">تدريب ذكي</h3>
-          <p data-ar="مش مجرد تعب، ده تدريب منظم يوصلك للنتيجة بأذكى طريقة." data-en="Not just hard work — structured training that gets results the smart way.">مش مجرد تعب، ده تدريب منظم يوصلك للنتيجة بأذكى طريقة.</p>
         </div>
-        <div class="method-card">
-          <div class="method-num">04</div>
-          <div class="method-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <div class="ml-item">
+          <span class="ml-n">04</span>
+          <div>
+            <h3 data-ar="دعم مستمر" data-en="Ongoing Support">دعم مستمر</h3>
+            <p data-ar="مش لوحدك. أنا معاك خطوة بخطوة في كل لحظة من الرحلة." data-en="Not alone. I'm with you step by step through every moment of the journey.">مش لوحدك. أنا معاك خطوة بخطوة في كل لحظة من الرحلة.</p>
           </div>
-          <h3 data-ar="دعم مستمر" data-en="Ongoing Support">دعم مستمر</h3>
-          <p data-ar="مش لوحدك في الرحلة دي. أنا معاك خطوة بخطوة طول الطريق." data-en="You're not alone. I'm with you every single step of the way.">مش لوحدك في الرحلة دي. أنا معاك خطوة بخطوة طول الطريق.</p>
         </div>
-        <div class="method-card">
-          <div class="method-num">05</div>
-          <div class="method-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        <div class="ml-item">
+          <span class="ml-n">05</span>
+          <div>
+            <h3 data-ar="قياس ومتابعة" data-en="Tracking & Progress">قياس ومتابعة</h3>
+            <p data-ar="بنقيس كل حاجة ونحسن على أساس بيانات حقيقية — مش تخمين." data-en="We measure everything and improve based on real data — not guesswork.">بنقيس كل حاجة ونحسن على أساس بيانات حقيقية — مش تخمين.</p>
           </div>
-          <h3 data-ar="قياس ومتابعة" data-en="Tracking & Results">قياس ومتابعة</h3>
-          <p data-ar="بنقيس كل حاجة ونحسن على أساس بيانات حقيقية مش حدس." data-en="We measure everything and improve based on real data, not guesswork.">بنقيس كل حاجة ونحسن على أساس بيانات حقيقية مش حدس.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== PRICING ========== -->
-  <section class="pricing-section" id="pricing">
-    <div class="pricing-glow"></div>
-    <div class="wrap">
-      <div class="section-intro text-center reveal">
-        <div class="tag-line centered">
-          <span class="tag-dot"></span>
-          <span data-ar="PACKAGES" data-en="PACKAGES">PACKAGES</span>
-          <span class="tag-dot"></span>
-        </div>
-        <h2 class="section-title">
-          <span data-ar="اختر باقتك" data-en="Choose your">اختر باقتك</span>
-          <span class="text-ice" data-ar=" وابدأ." data-en=" package."> وابدأ.</span>
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-wrap">
+      <div class="section-head text-center reveal">
+        <p class="section-eyebrow" data-ar="الباقات" data-en="PACKAGES">الباقات</p>
+        <h2 class="section-h2">
+          <span data-ar="اختر وابدأ." data-en="Choose. Start.">اختر وابدأ.</span>
         </h2>
-        <p class="section-subtitle" data-ar="كل الباقات بتشمل دعم مباشر عبر واتساب" data-en="All packages include direct WhatsApp support">كل الباقات بتشمل دعم مباشر عبر واتساب</p>
       </div>
 
-      <div class="pricing-grid reveal">
+      <div class="pkg-row reveal">
         <!-- STARTER -->
-        <div class="pkg-card">
-          <div class="pkg-header">
-            <div class="pkg-tier">STARTER</div>
-            <div class="pkg-duration" data-ar="شهر واحد" data-en="1 Month">شهر واحد</div>
+        <div class="pkg">
+          <div class="pkg-top">
+            <span class="pkg-name">STARTER</span>
+            <span class="pkg-dur" data-ar="شهر" data-en="1 Month">شهر</span>
           </div>
-          <div class="pkg-price-row">
-            <span class="pkg-cur">EGP</span>
-            <span class="pkg-amt">350</span>
-          </div>
-          <ul class="pkg-list">
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="خطة تدريب أساسية" data-en="Basic Training Plan">خطة تدريب أساسية</span></li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="نظام غذائي" data-en="Diet Plan">نظام غذائي</span></li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="دعم واتساب" data-en="WhatsApp Support">دعم واتساب</span></li>
-            <li class="pkg-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span data-ar="متابعة أسبوعية" data-en="Weekly Follow-up">متابعة أسبوعية</span></li>
+          <div class="pkg-price"><span class="pkg-egp">EGP</span> <span class="pkg-num">350</span></div>
+          <ul class="pkg-feats">
+            <li data-ar="خطة تدريب أساسية" data-en="Basic Training Plan">خطة تدريب أساسية</li>
+            <li data-ar="نظام غذائي" data-en="Diet Plan">نظام غذائي</li>
+            <li data-ar="دعم واتساب" data-en="WhatsApp Support">دعم واتساب</li>
+            <li class="feat-off" data-ar="متابعة أسبوعية" data-en="Weekly Follow-up">متابعة أسبوعية</li>
           </ul>
           <a href="https://wa.me/201020004091?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D9%83%D8%A7%D8%A8%D8%AA%D9%86%20%D8%A3%D8%AD%D9%85%D8%AF%0A%0A%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20STARTER%0A%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20350%20%D8%AC%D9%86%D9%8A%D9%87%0A%0A%D8%A3%D8%B1%D8%AC%D9%88%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%8A" class="pkg-btn" data-ar="ابدأ الآن" data-en="Get Started">ابدأ الآن</a>
         </div>
 
-        <!-- PRO (featured) -->
-        <div class="pkg-card pkg-featured">
-          <div class="pkg-popular-badge" data-ar="الأكثر طلباً" data-en="Most Popular">الأكثر طلباً</div>
-          <div class="pkg-glow-bg"></div>
-          <div class="pkg-header">
-            <div class="pkg-tier text-ice">PRO</div>
-            <div class="pkg-duration" data-ar="شهرين" data-en="2 Months">شهرين</div>
+        <!-- PRO -->
+        <div class="pkg pkg-hot">
+          <div class="pkg-hot-label" data-ar="الأكثر طلباً" data-en="Most Popular">الأكثر طلباً</div>
+          <div class="pkg-top">
+            <span class="pkg-name">PRO</span>
+            <span class="pkg-dur" data-ar="شهرين" data-en="2 Months">شهرين</span>
           </div>
-          <div class="pkg-price-row">
-            <span class="pkg-cur text-ice">EGP</span>
-            <span class="pkg-amt text-ice">600</span>
-          </div>
-          <ul class="pkg-list">
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="خطة تدريب متقدمة" data-en="Advanced Training Plan">خطة تدريب متقدمة</span></li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="نظام غذائي مخصص" data-en="Custom Diet Plan">نظام غذائي مخصص</span></li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="متابعة أسبوعية" data-en="Weekly Follow-up">متابعة أسبوعية</span></li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="تحليلات النتائج" data-en="Results Analytics">تحليلات النتائج</span></li>
+          <div class="pkg-price pkg-price-blue"><span class="pkg-egp">EGP</span> <span class="pkg-num">600</span></div>
+          <ul class="pkg-feats">
+            <li data-ar="خطة تدريب متقدمة" data-en="Advanced Training Plan">خطة تدريب متقدمة</li>
+            <li data-ar="نظام غذائي مخصص" data-en="Custom Diet Plan">نظام غذائي مخصص</li>
+            <li data-ar="متابعة أسبوعية" data-en="Weekly Follow-up">متابعة أسبوعية</li>
+            <li data-ar="تحليلات النتائج" data-en="Results Analytics">تحليلات النتائج</li>
           </ul>
-          <a href="https://wa.me/201020004091?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D9%83%D8%A7%D8%A8%D8%AA%D9%86%20%D8%A3%D8%AD%D9%85%D8%AF%0A%0A%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20PRO%0A%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20600%20%D8%AC%D9%86%D9%8A%D9%87%0A%0A%D8%A3%D8%B1%D8%AC%D9%88%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%8A" class="pkg-btn pkg-btn-primary" data-ar="اختار PRO" data-en="Choose PRO">اختار PRO</a>
+          <a href="https://wa.me/201020004091?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D9%83%D8%A7%D8%A8%D8%AA%D9%86%20%D8%A3%D8%AD%D9%85%D8%AF%0A%0A%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20PRO%0A%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20600%20%D8%AC%D9%86%D9%8A%D9%87%0A%0A%D8%A3%D8%B1%D8%AC%D9%88%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%8A" class="pkg-btn pkg-btn-blue" data-ar="اختار PRO" data-en="Choose PRO">اختار PRO</a>
         </div>
 
         <!-- ELITE -->
-        <div class="pkg-card">
-          <div class="pkg-header">
-            <div class="pkg-tier">ELITE</div>
-            <div class="pkg-duration" data-ar="3 أشهر" data-en="3 Months">3 أشهر</div>
+        <div class="pkg">
+          <div class="pkg-top">
+            <span class="pkg-name">ELITE</span>
+            <span class="pkg-dur" data-ar="3 أشهر" data-en="3 Months">3 أشهر</span>
           </div>
-          <div class="pkg-price-row">
-            <span class="pkg-cur">EGP</span>
-            <span class="pkg-amt">950</span>
-          </div>
-          <ul class="pkg-list">
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="خطة تدريب احترافية" data-en="Pro Training Plan">خطة تدريب احترافية</span></li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="نظام غذائي احترافي" data-en="Pro Diet Plan">نظام غذائي احترافي</span></li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="متابعة يومية" data-en="Daily Follow-up">متابعة يومية</span></li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg><span data-ar="دعم 24/7 ومكالمات" data-en="24/7 Support & Calls">دعم 24/7 ومكالمات</span></li>
+          <div class="pkg-price"><span class="pkg-egp">EGP</span> <span class="pkg-num">950</span></div>
+          <ul class="pkg-feats">
+            <li data-ar="خطة تدريب احترافية" data-en="Pro Training Plan">خطة تدريب احترافية</li>
+            <li data-ar="نظام غذائي احترافي" data-en="Pro Diet Plan">نظام غذائي احترافي</li>
+            <li data-ar="متابعة يومية" data-en="Daily Follow-up">متابعة يومية</li>
+            <li data-ar="دعم 24/7 ومكالمات" data-en="24/7 Support & Calls">دعم 24/7 ومكالمات</li>
           </ul>
           <a href="https://wa.me/201020004091?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D9%83%D8%A7%D8%A8%D8%AA%D9%86%20%D8%A3%D8%AD%D9%85%D8%AF%0A%0A%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20ELITE%0A%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20950%20%D8%AC%D9%86%D9%8A%D9%87%0A%0A%D8%A3%D8%B1%D8%AC%D9%88%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%8A" class="pkg-btn" data-ar="ابدأ الآن" data-en="Get Started">ابدأ الآن</a>
         </div>
@@ -389,64 +297,45 @@
     </div>
   </section>
 
-  <!-- ========== FINAL CTA ========== -->
-  <section class="final-cta">
+  <!-- CTA -->
+  <section class="cta-section">
     <div class="cta-bg-img">
-      <img src="images/coach2.jpg" alt="" aria-hidden="true" loading="lazy">
-      <div class="cta-overlay"></div>
+      <img src="images/coach2.jpg" alt="" loading="lazy">
+      <div class="cta-dim"></div>
     </div>
-    <div class="wrap text-center">
-      <div class="cta-content reveal">
-        <div class="tag-line centered">
-          <span class="tag-dot"></span>
-          <span data-ar="READY?" data-en="READY?">READY?</span>
-          <span class="tag-dot"></span>
-        </div>
-        <h2 class="cta-big-title">
-          <span data-ar="جاهز تبدأ" data-en="Ready to start">جاهز تبدأ</span><br>
-          <span class="text-ice" data-ar="التغيير؟" data-en="the change?">التغيير؟</span>
-        </h2>
-        <p class="cta-sub"
-           data-ar="أول خطوة هي القرار. والباقي... نعمله مع بعض."
-           data-en="The first step is the decision. The rest... we do together.">
-          أول خطوة هي القرار. والباقي... نعمله مع بعض.
-        </p>
-        <a href="https://wa.me/201020004091" class="cta-primary cta-xl">
-          <span class="cta-icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </span>
-          <span data-ar="ابدأ رحلتك دلوقتي" data-en="Start Your Journey Now">ابدأ رحلتك دلوقتي</span>
-        </a>
-      </div>
+    <div class="cta-inner reveal">
+      <h2 class="cta-h2">
+        <span data-ar="جاهز تبدأ" data-en="Ready to">جاهز تبدأ</span><br>
+        <em data-ar="التغيير؟" data-en="change?">التغيير؟</em>
+      </h2>
+      <p data-ar="أول خطوة هي القرار. والباقي نعمله مع بعض." data-en="The first step is the decision. The rest, we do together.">
+        أول خطوة هي القرار. والباقي نعمله مع بعض.
+      </p>
+      <a href="https://wa.me/201020004091" class="hero-cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-ar="ابدأ رحلتك دلوقتي" data-en="Start Your Journey Now">ابدأ رحلتك دلوقتي</span>
+      </a>
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="wrap footer-inner">
+    <div class="footer-wrap">
       <div class="footer-brand">
-        <div class="logo-badge"><span class="logo-ae">AE</span></div>
+        <span class="footer-logo">AE</span>
         <div>
-          <div class="footer-name">AHMED ESSA</div>
-          <div class="footer-role" data-ar="مدرب أونلاين" data-en="Online Coach">مدرب أونلاين</div>
+          <b>AHMED ESSA</b>
+          <span data-ar="مدرب أونلاين" data-en="Online Coach">مدرب أونلاين</span>
         </div>
       </div>
-      <div class="footer-socials">
-        <a href="#" aria-label="Instagram" class="social-btn">IG</a>
-        <a href="#" aria-label="TikTok"    class="social-btn">TK</a>
-        <a href="#" aria-label="YouTube"   class="social-btn">YT</a>
-        <a href="https://wa.me/201020004091" aria-label="WhatsApp" class="social-btn social-wa">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </a>
-      </div>
-      <p class="footer-copy"><span dir="ltr">© 2024 Ahmed Essa. All Rights Reserved.</span></p>
+      <p class="footer-c"><span dir="ltr">© 2024 Ahmed Essa. All rights reserved.</span></p>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/201020004091" target="_blank" class="float-wa" aria-label="WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <div class="float-wa-pulse"></div>
+  <!-- Floating WA -->
+  <a href="https://wa.me/201020004091" class="fwa" aria-label="WhatsApp" target="_blank">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <div class="fwa-ring"></div>
   </a>
 
   <script src="script.js"></script>
