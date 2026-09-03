@@ -14,39 +14,39 @@
   resize();
   window.addEventListener('resize', resize);
 
-  const COUNT = window.innerWidth < 768 ? 120 : 180;
+  const COUNT = window.innerWidth < 768 ? 160 : 300;
   for (let i = 0; i < COUNT; i++) {
-    // Randomize particle types: 0 = small distant snow, 1 = medium snow, 2 = glowing ice shards
     const type = Math.random();
     let size, speed, blur, alpha;
     
-    if (type < 0.5) { // Background snow
-      size = Math.random() * 1.5 + 0.5;
-      speed = Math.random() * 0.5 + 0.2;
-      blur = 0;
-      alpha = Math.random() * 0.4 + 0.2;
-    } else if (type < 0.8) { // Midground snow
-      size = Math.random() * 2.5 + 1.5;
-      speed = Math.random() * 1 + 0.5;
+    if (type < 0.5) { // Background heavy snow
+      size = Math.random() * 2 + 1;
+      speed = Math.random() * 0.8 + 0.5;
       blur = Math.random() * 2;
-      alpha = Math.random() * 0.6 + 0.4;
-    } else { // Foreground glowing ice shards (increased chance)
+      alpha = Math.random() * 0.6 + 0.3;
+    } else if (type < 0.8) { // Midground fast snow
       size = Math.random() * 4 + 2;
-      speed = Math.random() * 2 + 1;
-      blur = Math.random() * 5 + 3;
-      alpha = Math.random() * 0.8 + 0.5;
+      speed = Math.random() * 1.5 + 1;
+      blur = Math.random() * 4 + 2;
+      alpha = Math.random() * 0.8 + 0.4;
+    } else { // Foreground HUGE glowing ice shards
+      size = Math.random() * 7 + 3;
+      speed = Math.random() * 3 + 2;
+      blur = Math.random() * 12 + 6;
+      alpha = Math.random() * 0.7 + 0.3;
     }
 
     particles.push({
       x: Math.random() * W,
       y: Math.random() * H,
       r: size,
-      vx: (Math.random() - 0.5) * speed * 1.5 - (speed * 0.3), // Drifting left slightly
+      vx: (Math.random() - 0.5) * speed * 2 - (speed * 0.6), // Stronger wind to the left
       vy: speed,
       blur: blur,
       alpha: alpha,
-      wobble: Math.random() * Math.PI * 2, // For swaying motion
-      wobbleSpeed: (Math.random() - 0.5) * 0.05
+      wobble: Math.random() * Math.PI * 2,
+      wobbleSpeed: (Math.random() - 0.5) * 0.08,
+      isCore: type >= 0.8 // flag for drawing bright center
     });
   }
 
@@ -54,16 +54,15 @@
     ctx.clearRect(0, 0, W, H);
     
     particles.forEach(p => {
-      // Swaying motion
       p.wobble += p.wobbleSpeed;
-      p.x += p.vx + Math.sin(p.wobble) * 0.5;
+      p.x += p.vx + Math.sin(p.wobble) * 1.2; // stronger sway
       p.y += p.vy;
       
-      // Wrap around
-      if (p.x < -20) p.x = W + 20; 
-      if (p.x > W + 20) p.x = -20;
-      if (p.y > H + 20) {
-        p.y = -20;
+      // Wrap around with buffer
+      if (p.x < -30) p.x = W + 30; 
+      if (p.x > W + 30) p.x = -30;
+      if (p.y > H + 30) {
+        p.y = -30;
         p.x = Math.random() * W;
       }
 
@@ -72,14 +71,23 @@
       
       if (p.blur > 0) {
         ctx.shadowBlur = p.blur;
-        ctx.shadowColor = `rgba(160, 220, 255, ${p.alpha})`;
+        ctx.shadowColor = `rgba(160, 240, 255, ${p.alpha})`;
       } else {
         ctx.shadowBlur = 0;
       }
       
-      const hue = 195 + Math.random() * 15; // Icy blue/cyan
-      ctx.fillStyle = `hsla(${hue}, 90%, 90%, ${p.alpha})`;
+      const hue = 190 + Math.random() * 15;
+      ctx.fillStyle = `hsla(${hue}, 100%, 85%, ${p.alpha})`;
       ctx.fill();
+
+      // If it's a huge ice shard, draw a bright solid white center
+      if (p.isCore) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * 0.4, 0, Math.PI * 2);
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha + 0.2})`;
+        ctx.fill();
+      }
     });
     
     requestAnimationFrame(draw);
