@@ -613,3 +613,50 @@ body.lang-en .features-overlay { background: linear-gradient(-90deg, var(--bg) 0
 }
 .footer-social a:hover { border-color: var(--blue); background: rgba(0,85,255,0.1); color: var(--blue-l); }
 .footer-copy { font-family: var(--font-en); font-size: 0.8rem; color: var(--muted); }
+
+/* ============== SVG ICON STYLES ============== */
+/* Stat card icons */
+.stat-icon svg {
+  stroke: var(--blue-l);
+  filter: drop-shadow(0 0 6px var(--blue-glow));
+  transition: var(--t);
+}
+.stat-card:hover .stat-icon svg {
+  filter: drop-shadow(0 0 14px rgba(0,85,255,0.7));
+  stroke: var(--white);
+}
+
+/* Feature icons */
+.feature-icon svg {
+  stroke: var(--blue-l);
+  filter: drop-shadow(0 0 7px var(--blue-glow));
+  transition: var(--t);
+}
+.feature-item:hover .feature-icon svg {
+  filter: drop-shadow(0 0 16px rgba(0,85,255,0.9));
+  stroke: var(--white);
+  transform: scale(1.12);
+}
+
+/* Plan icons */
+.plan-icon svg {
+  stroke: var(--muted);
+  transition: var(--t);
+}
+.price-card:hover .plan-icon svg {
+  stroke: var(--blue-l);
+  filter: drop-shadow(0 0 10px var(--blue-glow));
+}
+.price-card.popular .plan-icon svg {
+  stroke: var(--blue-l);
+  filter: drop-shadow(0 0 10px var(--blue-glow));
+}
+
+/* Check mark refinement */
+.plan-features .check {
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.plan-features .check.blue-text { color: var(--blue-l); }
+.plan-features li.muted .check { color: rgba(255,255,255,0.2); }
